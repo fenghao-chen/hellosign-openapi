@@ -444,6 +444,18 @@
 "TeamGet::SUMMARY": Get Team
 "TeamGet::DESCRIPTION": Returns information about your Team as well as a list of its members. If you do not belong to a Team, a 404 error with an error_name of "not_found" will be returned.
 
+"TeamMembers::SUMMARY": TEMP TRANSLATION
+"TeamMembers::DESCRIPTION": TEMP TRANSLATION
+"TeamMembers::TEAM_ID": TEMP TRANSLATION
+"TeamMembers::PAGE": TEMP TRANSLATION
+"TeamMembers::PAGE_SIZE": TEMP TRANSLATION
+"TeamMemberResponse::ACCOUNT_ID": TEMP TRANSLATION
+"TeamMemberResponse::EMAIL_ADDRESS": TEMP TRANSLATION
+"TeamMemberResponse::ROLE": TEMP TRANSLATION
+"TeamMembersResponse::DESCRIPTION": TEMP TRANSLATION
+"TemplateResponseDocumentCustomField::NAMED_FORM_FIELDS": TEMP TRANSLATION
+"TeamMembersResponseExample::SUMMARY": TEMP TRANSLATION
+
 "TeamRemoveMember::SUMMARY": Remove User from Team
 "TeamRemoveMember::DESCRIPTION": Removes the provided user Account from your Team. If the Account had an outstanding invitation to your Team, the invitation will be expired. If you choose to transfer documents from the removed Account to an Account provided in the `new_owner_email_address` parameter (available only for Enterprise plans), the response status code will be 201, which indicates that your request has been queued but not fully executed.
 "TeamRemoveMember::ACCOUNT_ID": |-
