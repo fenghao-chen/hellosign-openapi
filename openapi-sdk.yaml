@@ -4438,6 +4438,7 @@ components:
             masked:
               description: 'Masks entered data. For more information see [Masking sensitive information](https://faq.hellosign.com/hc/en-us/articles/360040742811-Masking-sensitive-information). `true` for masking the data in a text field, otherwise `false`.'
               type: boolean
+              nullable: true
             validation_type:
               description: |-
                 Each text field may contain a `validation_type` parameter. Check out the list of [validation types](https://faq.hellosign.com/hc/en-us/articles/217115577) to learn more about the possible values.
@@ -4529,6 +4530,7 @@ components:
             checked:
               description: '`true` for checking the checkbox field by default, otherwise `false`.'
               type: boolean
+              nullable: true
           type: object
     SubFormFieldsPerDocumentRadio:
       description: 'This class extends `SubFormFieldsPerDocumentBase`.'
@@ -4552,6 +4554,7 @@ components:
             checked:
               description: '`true` for checking the radio field by default, otherwise `false`. Only one radio field per group can be `true`.'
               type: boolean
+              nullable: true
           type: object
     SubFormFieldsPerDocumentSignature:
       description: 'This class extends `SubFormFieldsPerDocumentBase`.'
@@ -5360,6 +5363,7 @@ components:
 
             **NOTE**: Only one signer can be assigned per attachment.
           type: integer
+          nullable: true
       type: object
     SubBulkSignerList:
       properties:
@@ -5540,6 +5544,7 @@ components:
         hidden:
           description: '`true` to hide the target field when rule is satisfied, otherwise `false`.'
           type: boolean
+          nullable: true
         type:
           type: string
           enum:
@@ -5639,12 +5644,14 @@ components:
         document_index:
           description: 'Represents the integer index of the `file` or `file_url` document the field should be attached to.'
           type: integer
+          nullable: true
         api_id:
           description: 'An identifier for the field that is unique across all documents in the request.'
           type: string
         height:
           description: 'Size of the field in pixels.'
           type: integer
+          nullable: true
         name:
           description: 'Display name for the field.'
           type: string
@@ -5655,9 +5662,11 @@ components:
             - When the page number parameter is supplied, the API will use the new coordinate system.
             - Check out the differences between both [coordinate systems](https://faq.hellosign.com/hc/en-us/articles/217115577) and how to use them.
           type: integer
+          nullable: true
         required:
           description: 'Whether this field is required.'
           type: boolean
+          nullable: true
         signer:
           description: |-
             Signer index identified by the offset in the signers parameter (0-based indexing), indicating which signer should fill out the field.
@@ -5669,12 +5678,15 @@ components:
         width:
           description: 'Size of the field in pixels.'
           type: integer
+          nullable: true
         x:
           description: 'Location coordinates of the field in pixels.'
           type: integer
+          nullable: true
         'y':
           description: 'Location coordinates of the field in pixels.'
           type: integer
+          nullable: true
       type: object
       discriminator:
         propertyName: type
@@ -5753,6 +5765,7 @@ components:
         order:
           description: 'The order the signer is required to sign in.'
           type: integer
+          nullable: true
         pin:
           description: 'The 4- to 12-character access code that will secure this signer''s signature page.'
           type: string
@@ -5791,6 +5804,7 @@ components:
         order:
           description: 'The order the signer is required to sign in.'
           type: integer
+          nullable: true
         pin:
           description: 'The 4- to 12-character access code that will secure this signer''s signature page.'
           type: string
@@ -5857,6 +5871,7 @@ components:
         order:
           description: 'The order the signer is required to sign in.'
           type: integer
+          nullable: true
       type: object
     SubUnclaimedDraftTemplateSigner:
       required:
@@ -5883,6 +5898,7 @@ components:
         order:
           description: 'The order in which this signer role is required to sign.'
           type: integer
+          nullable: true
       type: object
     SubSigningOptions:
       description: |-
@@ -5971,6 +5987,7 @@ components:
         reset_to_default:
           description: 'Resets white labeling options to defaults. Only useful when updating an API App.'
           type: boolean
+          nullable: true
       type: object
     TeamAddMemberRequest:
       properties:
@@ -6504,6 +6521,7 @@ components:
             - `show_preview=true`: Allows requesters to enable the editor/preview experience.
             - `show_preview=false`: Allows requesters to disable the editor/preview experience.
           type: boolean
+          nullable: true
         show_progress_stepper:
           description: 'When only one step remains in the signature request process and this parameter is set to `false` then the progress stepper will be hidden.'
           type: boolean
@@ -6698,6 +6716,7 @@ components:
         is_for_embedded_signing:
           description: 'The request created from this draft will also be signable in embedded mode if set to `true`.'
           type: boolean
+          nullable: true
         requester_email_address:
           description: 'The email address of the user that should be designated as the requester of this draft. If not set, original requester''s email address will be used.'
           type: string
