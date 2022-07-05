@@ -21,3 +21,5 @@ bash "${PWD}/bin/php" ./bin/generate-sdk-oas.php
 printf "\n"
 
 printf "Success!\n"
+
+
