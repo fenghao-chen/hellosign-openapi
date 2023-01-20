@@ -1,0 +1,34 @@
+on:
+  # Allow manually triggering of the workflow.
+  workflow_dispatch:
+    inputs:
+      debug_enabled:
+        type: boolean
+        description: 'Run the build with tmate debugging enabled (https://github.com/marketplace/actions/debugging-with-tmate)'
+        required: false
+        default: false
+
+jobs:
+  create-pull-request-java:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          path: main
+
+      - name: Checkout Java SDK
+        uses: actions/checkout@v3
+        with:
+          repository: fenghao-chen/dropbox-sign-java
+          path: java
+
+      - name: build latest Java SDK
+        run: |
+          ./main/generate-sdks -t java
+          cp -R main/sdks/java java/
+
+      - name: create pull request
+        uses: peter-evans/create-pull-request@v4
+        with:
+          path: java
