@@ -32,4 +32,5 @@ jobs:
       - name: create pull request
         uses: peter-evans/create-pull-request@v4
         with:
+          token: ${{ secrets.PAT }}
           path: java
