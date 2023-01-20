@@ -1,8 +1,8 @@
 using System;
 using System.Collections.Generic;
-using Org.HelloSign.Api;
-using Org.HelloSign.Client;
-using Org.HelloSign.Model;
+using HelloSign.Api;
+using HelloSign.Client;
+using HelloSign.Model;
 
 public class Example
 {
@@ -21,8 +21,12 @@ public class Example
 
         try
         {
-            var result = apiInstance.TemplateFiles(templateId, "pdf", false, false);
-            Console.WriteLine(result);
+            var result = apiInstance.TemplateFiles(templateId, "pdf");
+
+            var fileStream = File.Create("file_response.pdf");
+            result.Seek(0, SeekOrigin.Begin);
+            result.CopyTo(fileStream);
+            fileStream.Close();
         }
         catch (ApiException e)
         {

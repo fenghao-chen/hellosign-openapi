@@ -26,9 +26,6 @@
     "field_options": {
       "date_format": "MM / DD / YYYY"
     },
-    "file": [
-      "pdf-sample.pdf"
-    ],
     "file_url": [
       "https://app.hellosign.com/docs/example_signature_request.pdf"
     ],
@@ -93,6 +90,7 @@
     "metadata": {
       "field1": "value1"
     },
+    "populate_auto_fill_fields": false,
     "signers": [
       {
         "email_address": "jack@example.com",

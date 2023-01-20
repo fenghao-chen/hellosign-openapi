@@ -1,10 +1,12 @@
-import * as HelloSignSDK
-  from "@hellosign/openapi-javascript-sdk";
+import * as HelloSignSDK from "hellosign-sdk";
 
 const api = new HelloSignSDK.SignatureRequestApi();
 
 // Configure HTTP basic authorization: api_key
 api.username = "YOUR_API_KEY";
+
+// or, configure Bearer (JWT) authorization: oauth2
+// api.accessToken = "YOUR_ACCESS_TOKEN";
 
 const signerList1Signer = {
   role: "Client",

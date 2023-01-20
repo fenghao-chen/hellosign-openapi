@@ -1,4 +1,4 @@
-require "hello_sign"
+require "hellosign-ruby-sdk"
 
 HelloSign.configure do |config|
   # Configure HTTP basic authorization: api_key
@@ -11,7 +11,7 @@ end
 api = HelloSign::AccountApi.new
 
 begin
-  result = api.account_get
+  result = api.account_get({ email_address: "jack@example.com" })
   p result
 rescue HelloSign::ApiError => e
   puts "Exception when calling HelloSign API: #{e}"

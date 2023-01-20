@@ -1,4 +1,4 @@
-require "hello_sign"
+require "hellosign-ruby-sdk"
 
 HelloSign.configure do |config|
   # Configure HTTP basic authorization: api_key
@@ -10,7 +10,7 @@ end
 
 api = HelloSign::SignatureRequestApi.new
 
-signer_1 = HelloSign::SubSignatureRequestSigner.new
+signer_1 = HelloSign::SubSignatureRequestTemplateSigner.new
 signer_1.role = "Client"
 signer_1.email_address = "george@example.com"
 signer_1.name = "George"

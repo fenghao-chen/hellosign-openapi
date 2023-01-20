@@ -1,8 +1,9 @@
 using System;
 using System.Collections.Generic;
-using Org.HelloSign.Api;
-using Org.HelloSign.Client;
-using Org.HelloSign.Model;
+using System.IO;
+using HelloSign.Api;
+using HelloSign.Client;
+using HelloSign.Model;
 
 public class Example
 {
@@ -47,13 +48,22 @@ public class Example
             ["custom_text"] = "NDA #9"
         };
 
+        var files = new List<Stream> {
+            new FileStream(
+                TestHelper.RootPath + "/example_signature_request.pdf",
+                FileMode.Open,
+                FileAccess.Read,
+                FileShare.Read
+            )
+        };
+
         var data = new UnclaimedDraftCreateRequest(
             subject: "The NDA we talked about",
             type: UnclaimedDraftCreateRequest.TypeEnum.RequestSignature,
             message: "Please sign this NDA and then we can discuss more. Let me know if you have any questions.",
             signers: new List<SubUnclaimedDraftSigner>(){signer1, signer2},
             ccEmailAddresses: new List<string>(){"lawyer@hellosign.com", "lawyer@example.com"},
-            fileUrl: new List<string>(){"https://app.hellosign.com/docs/example_signature_request.pdf"},
+            file: files,
             metadata: metadata,
             signingOptions: subSigningOptions,
             fieldOptions: subFieldOptions,

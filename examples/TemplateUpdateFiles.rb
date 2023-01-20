@@ -1,4 +1,4 @@
-require "hello_sign"
+require "hellosign-ruby-sdk"
 
 HelloSign.configure do |config|
   # Configure HTTP basic authorization: api_key
@@ -11,7 +11,7 @@ end
 api = HelloSign::TemplateApi.new
 
 data = HelloSign::TemplateUpdateFilesRequest.new
-data.file_url = ["https://app.hellosign.com/docs/example_signature_request.pdf"]
+data.file = [File.new("example_signature_request.pdf", "r")]
 
 template_id = "5de8179668f2033afac48da1868d0093bf133266"
 

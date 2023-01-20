@@ -1,5 +1,4 @@
-import * as HelloSignSDK
-  from "@hellosign/openapi-javascript-sdk";
+import * as HelloSignSDK from "hellosign-sdk";
 
 const api = new HelloSignSDK.TemplateApi();
 
@@ -7,7 +6,7 @@ const api = new HelloSignSDK.TemplateApi();
 api.username = "YOUR_API_KEY";
 
 // or, configure Bearer (JWT) authorization: oauth2
-// $config->setAccessToken("YOUR_ACCESS_TOKEN");
+// api.accessToken = "YOUR_ACCESS_TOKEN";
 
 const data: HelloSignSDK.TemplateAddUserRequest = {
   emailAddress: "george@hellosign.com",

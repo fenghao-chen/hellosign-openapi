@@ -1,5 +1,4 @@
-import * as HelloSignSDK
-  from "@hellosign/openapi-javascript-sdk";
+import * as HelloSignSDK from "hellosign-sdk";
 
 const api = new HelloSignSDK.SignatureRequestApi();
 
@@ -7,7 +6,7 @@ const api = new HelloSignSDK.SignatureRequestApi();
 api.username = "YOUR_API_KEY";
 
 // or, configure Bearer (JWT) authorization: oauth2
-// $config->setAccessToken("YOUR_ACCESS_TOKEN");
+// api.accessToken = "YOUR_ACCESS_TOKEN";
 
 const signatureRequestId = "2f9781e1a8e2045224d808c153c2e1d3df6f8f2f";
 

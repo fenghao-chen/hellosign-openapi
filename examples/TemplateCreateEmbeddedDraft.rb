@@ -1,4 +1,4 @@
-require "hello_sign"
+require "hellosign-ruby-sdk"
 
 HelloSign.configure do |config|
   # Configure HTTP basic authorization: api_key
@@ -31,7 +31,7 @@ field_options.date_format = "DD - MM - YYYY"
 
 data = HelloSign::TemplateCreateEmbeddedDraftRequest.new
 data.client_id = "37dee8d8440c66d54cfa05d92c160882"
-data.file_url = ["https://app.hellosign.com/docs/example_signature_request.pdf"]
+data.file = [File.new("example_signature_request.pdf", "r")]
 data.title = "Test Template"
 data.subject = "Please sign this document"
 data.message = "For your approval"

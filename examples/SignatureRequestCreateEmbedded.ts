@@ -1,5 +1,6 @@
-import * as HelloSignSDK
-  from "@hellosign/openapi-javascript-sdk";
+import * as HelloSignSDK from "hellosign-sdk";
+
+const fs = require('fs');
 
 const api = new HelloSignSDK.SignatureRequestApi();
 
@@ -7,7 +8,7 @@ const api = new HelloSignSDK.SignatureRequestApi();
 api.username = "YOUR_API_KEY";
 
 // or, configure Bearer (JWT) authorization: oauth2
-// $config->setAccessToken("YOUR_ACCESS_TOKEN");
+// api.accessToken = "YOUR_ACCESS_TOKEN";
 
 const signer1: HelloSignSDK.SubSignatureRequestSigner = {
   emailAddress: "jack@example.com",
@@ -39,7 +40,7 @@ const data: HelloSignSDK.SignatureRequestCreateEmbeddedRequest = {
     "lawyer@hellosign.com",
     "lawyer@example.com",
   ],
-  fileUrl: ["https://app.hellosign.com/docs/example_signature_request.pdf"],
+  file: [fs.createReadStream("example_signature_request.pdf")],
   signingOptions,
   testMode: true,
 };

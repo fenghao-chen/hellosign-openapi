@@ -1,8 +1,9 @@
 using System;
 using System.Collections.Generic;
-using Org.HelloSign.Api;
-using Org.HelloSign.Client;
-using Org.HelloSign.Model;
+using System.IO;
+using HelloSign.Api;
+using HelloSign.Client;
+using HelloSign.Model;
 
 public class Example
 {
@@ -17,8 +18,17 @@ public class Example
 
         var apiInstance = new TemplateApi(config);
 
+        var files = new List<Stream> {
+            new FileStream(
+                TestHelper.RootPath + "/example_signature_request.pdf",
+                FileMode.Open,
+                FileAccess.Read,
+                FileShare.Read
+            )
+        };
+
         var data = new TemplateUpdateFilesRequest(
-            fileUrl: new List<string>(){"https://app.hellosign.com/docs/example_signature_request.pdf"}
+            file: files,
         );
 
         var templateId = "21f920ec2b7f4b6bb64d3ed79f26303843046536";

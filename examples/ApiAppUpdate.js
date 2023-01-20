@@ -1,5 +1,6 @@
-import * as HelloSignSDK
-  from "@hellosign/openapi-javascript-sdk";
+import * as HelloSignSDK from "hellosign-sdk";
+
+const fs = require('fs');
 
 const api = new HelloSignSDK.ApiAppApi();
 
@@ -17,7 +18,7 @@ const whiteLabelingOptions = {
 const data = {
   name: "New Name",
   callbackUrl: "http://example.com/hellosign",
-  customLogoFile: "./CustomLogoFile.png",
+  customLogoFile: fs.createReadStream("CustomLogoFile.png"),
   whiteLabelingOptions,
 };
 

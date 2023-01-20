@@ -34,6 +34,13 @@ paths:
       responses:
         '200':
           description: 'successful operation'
+          headers:
+            X-RateLimit-Limit:
+              $ref: '#/components/headers/X-RateLimit-Limit'
+            X-RateLimit-Remaining:
+              $ref: '#/components/headers/X-RateLimit-Remaining'
+            X-Ratelimit-Reset:
+              $ref: '#/components/headers/X-Ratelimit-Reset'
           content:
             application/json:
               schema:
@@ -102,6 +109,15 @@ paths:
           label: Python
           source:
             $ref: examples/AccountCreate.py
+        -
+          lang: cURL
+          label: cURL
+          source:
+            $ref: examples/AccountCreate.sh
+      x-meta:
+        seo:
+          title: '_t__AccountCreate::SEO::TITLE'
+          description: '_t__AccountCreate::SEO::DESCRIPTION'
   /account:
     get:
       tags:
@@ -117,9 +133,23 @@ paths:
           required: false
           schema:
             type: string
+        -
+          name: email_address
+          in: query
+          description: '_t__AccountGet::EMAIL_ADDRESS'
+          required: false
+          schema:
+            type: string
       responses:
         '200':
           description: 'successful operation'
+          headers:
+            X-RateLimit-Limit:
+              $ref: '#/components/headers/X-RateLimit-Limit'
+            X-RateLimit-Remaining:
+              $ref: '#/components/headers/X-RateLimit-Remaining'
+            X-Ratelimit-Reset:
+              $ref: '#/components/headers/X-Ratelimit-Reset'
           content:
             application/json:
               schema:
@@ -187,6 +217,15 @@ paths:
           label: Python
           source:
             $ref: examples/AccountGet.py
+        -
+          lang: cURL
+          label: cURL
+          source:
+            $ref: examples/AccountGet.sh
+      x-meta:
+        seo:
+          title: '_t__AccountGet::SEO::TITLE'
+          description: '_t__AccountGet::SEO::DESCRIPTION'
     put:
       tags:
         - Account
@@ -205,6 +244,13 @@ paths:
       responses:
         '200':
           description: 'successful operation'
+          headers:
+            X-RateLimit-Limit:
+              $ref: '#/components/headers/X-RateLimit-Limit'
+            X-RateLimit-Remaining:
+              $ref: '#/components/headers/X-RateLimit-Remaining'
+            X-Ratelimit-Reset:
+              $ref: '#/components/headers/X-Ratelimit-Reset'
           content:
             application/json:
               schema:
@@ -273,6 +319,15 @@ paths:
           label: Python
           source:
             $ref: examples/AccountUpdate.py
+        -
+          lang: cURL
+          label: cURL
+          source:
+            $ref: examples/AccountUpdate.sh
+      x-meta:
+        seo:
+          title: '_t__AccountUpdate::SEO::TITLE'
+          description: '_t__AccountUpdate::SEO::DESCRIPTION'
   /account/verify:
     post:
       tags:
@@ -292,6 +347,13 @@ paths:
       responses:
         '200':
           description: 'successful operation'
+          headers:
+            X-RateLimit-Limit:
+              $ref: '#/components/headers/X-RateLimit-Limit'
+            X-RateLimit-Remaining:
+              $ref: '#/components/headers/X-RateLimit-Remaining'
+            X-Ratelimit-Reset:
+              $ref: '#/components/headers/X-Ratelimit-Reset'
           content:
             application/json:
               schema:
@@ -360,6 +422,15 @@ paths:
           label: Python
           source:
             $ref: examples/AccountVerify.py
+        -
+          lang: cURL
+          label: cURL
+          source:
+            $ref: examples/AccountVerify.sh
+      x-meta:
+        seo:
+          title: '_t__AccountVerify::SEO::TITLE'
+          description: '_t__AccountVerify::SEO::DESCRIPTION'
   /api_app:
     post:
       tags:
@@ -379,12 +450,16 @@ paths:
           multipart/form-data:
             schema:
               $ref: '#/components/schemas/ApiAppCreateRequest'
-            examples:
-              default_example:
-                $ref: '#/components/examples/ApiAppCreateRequestFormDataExample'
       responses:
         '200':
           description: 'successful operation'
+          headers:
+            X-RateLimit-Limit:
+              $ref: '#/components/headers/X-RateLimit-Limit'
+            X-RateLimit-Remaining:
+              $ref: '#/components/headers/X-RateLimit-Remaining'
+            X-Ratelimit-Reset:
+              $ref: '#/components/headers/X-Ratelimit-Reset'
           content:
             application/json:
               schema:
@@ -453,6 +528,15 @@ paths:
           label: Python
           source:
             $ref: examples/ApiAppCreate.py
+        -
+          lang: cURL
+          label: cURL
+          source:
+            $ref: examples/ApiAppCreate.sh
+      x-meta:
+        seo:
+          title: '_t__ApiAppCreate::SEO::TITLE'
+          description: '_t__ApiAppCreate::SEO::DESCRIPTION'
   '/api_app/{client_id}':
     get:
       tags:
@@ -472,6 +556,13 @@ paths:
       responses:
         '200':
           description: 'successful operation'
+          headers:
+            X-RateLimit-Limit:
+              $ref: '#/components/headers/X-RateLimit-Limit'
+            X-RateLimit-Remaining:
+              $ref: '#/components/headers/X-RateLimit-Remaining'
+            X-Ratelimit-Reset:
+              $ref: '#/components/headers/X-Ratelimit-Reset'
           content:
             application/json:
               schema:
@@ -542,6 +633,15 @@ paths:
           label: Python
           source:
             $ref: examples/ApiAppGet.py
+        -
+          lang: cURL
+          label: cURL
+          source:
+            $ref: examples/ApiAppGet.sh
+      x-meta:
+        seo:
+          title: '_t__ApiAppGet::SEO::TITLE'
+          description: '_t__ApiAppGet::SEO::DESCRIPTION'
     put:
       tags:
         - 'Api App'
@@ -569,12 +669,16 @@ paths:
           multipart/form-data:
             schema:
               $ref: '#/components/schemas/ApiAppUpdateRequest'
-            examples:
-              default_example:
-                $ref: '#/components/examples/ApiAppUpdateRequestFormDataExample'
       responses:
         '200':
           description: 'successful operation'
+          headers:
+            X-RateLimit-Limit:
+              $ref: '#/components/headers/X-RateLimit-Limit'
+            X-RateLimit-Remaining:
+              $ref: '#/components/headers/X-RateLimit-Remaining'
+            X-Ratelimit-Reset:
+              $ref: '#/components/headers/X-Ratelimit-Reset'
           content:
             application/json:
               schema:
@@ -645,6 +749,15 @@ paths:
           label: Python
           source:
             $ref: examples/ApiAppUpdate.py
+        -
+          lang: cURL
+          label: cURL
+          source:
+            $ref: examples/ApiAppUpdate.sh
+      x-meta:
+        seo:
+          title: '_t__ApiAppUpdate::SEO::TITLE'
+          description: '_t__ApiAppUpdate::SEO::DESCRIPTION'
     delete:
       tags:
         - 'Api App'
@@ -663,6 +776,13 @@ paths:
       responses:
         '204':
           description: 'successful operation'
+          headers:
+            X-RateLimit-Limit:
+              $ref: '#/components/headers/X-RateLimit-Limit'
+            X-RateLimit-Remaining:
+              $ref: '#/components/headers/X-RateLimit-Remaining'
+            X-Ratelimit-Reset:
+              $ref: '#/components/headers/X-Ratelimit-Reset'
         4XX:
           description: failed_operation
           content:
@@ -724,6 +844,15 @@ paths:
           label: Python
           source:
             $ref: examples/ApiAppDelete.py
+        -
+          lang: cURL
+          label: cURL
+          source:
+            $ref: examples/ApiAppDelete.sh
+      x-meta:
+        seo:
+          title: '_t__ApiAppDelete::SEO::TITLE'
+          description: '_t__ApiAppDelete::SEO::DESCRIPTION'
   /api_app/list:
     get:
       tags:
@@ -749,6 +878,13 @@ paths:
       responses:
         '200':
           description: 'successful operation'
+          headers:
+            X-RateLimit-Limit:
+              $ref: '#/components/headers/X-RateLimit-Limit'
+            X-RateLimit-Remaining:
+              $ref: '#/components/headers/X-RateLimit-Remaining'
+            X-Ratelimit-Reset:
+              $ref: '#/components/headers/X-Ratelimit-Reset'
           content:
             application/json:
               schema:
@@ -815,6 +951,15 @@ paths:
           label: Python
           source:
             $ref: examples/ApiAppList.py
+        -
+          lang: cURL
+          label: cURL
+          source:
+            $ref: examples/ApiAppList.sh
+      x-meta:
+        seo:
+          title: '_t__ApiAppList::SEO::TITLE'
+          description: '_t__ApiAppList::SEO::DESCRIPTION'
   '/bulk_send_job/{bulk_send_job_id}':
     get:
       tags:
@@ -834,6 +979,13 @@ paths:
       responses:
         '200':
           description: 'successful operation'
+          headers:
+            X-RateLimit-Limit:
+              $ref: '#/components/headers/X-RateLimit-Limit'
+            X-RateLimit-Remaining:
+              $ref: '#/components/headers/X-RateLimit-Remaining'
+            X-Ratelimit-Reset:
+              $ref: '#/components/headers/X-Ratelimit-Reset'
           content:
             application/json:
               schema:
@@ -901,6 +1053,15 @@ paths:
           label: Python
           source:
             $ref: examples/BulkSendJobGet.py
+        -
+          lang: cURL
+          label: cURL
+          source:
+            $ref: examples/BulkSendJobGet.sh
+      x-meta:
+        seo:
+          title: '_t__BulkSendJobGet::SEO::TITLE'
+          description: '_t__BulkSendJobGet::SEO::DESCRIPTION'
   /bulk_send_job/list:
     get:
       tags:
@@ -926,6 +1087,13 @@ paths:
       responses:
         '200':
           description: 'successful operation'
+          headers:
+            X-RateLimit-Limit:
+              $ref: '#/components/headers/X-RateLimit-Limit'
+            X-RateLimit-Remaining:
+              $ref: '#/components/headers/X-RateLimit-Remaining'
+            X-Ratelimit-Reset:
+              $ref: '#/components/headers/X-Ratelimit-Reset'
           content:
             application/json:
               schema:
@@ -993,6 +1161,15 @@ paths:
           label: Python
           source:
             $ref: examples/BulkSendJobList.py
+        -
+          lang: cURL
+          label: cURL
+          source:
+            $ref: examples/BulkSendJobList.sh
+      x-meta:
+        seo:
+          title: '_t__BulkSendJobList::SEO::TITLE'
+          description: '_t__BulkSendJobList::SEO::DESCRIPTION'
   '/embedded/edit_url/{template_id}':
     post:
       tags:
@@ -1021,6 +1198,13 @@ paths:
       responses:
         '200':
           description: 'successful operation'
+          headers:
+            X-RateLimit-Limit:
+              $ref: '#/components/headers/X-RateLimit-Limit'
+            X-RateLimit-Remaining:
+              $ref: '#/components/headers/X-RateLimit-Remaining'
+            X-Ratelimit-Reset:
+              $ref: '#/components/headers/X-Ratelimit-Reset'
           content:
             application/json:
               schema:
@@ -1089,6 +1273,15 @@ paths:
           label: Python
           source:
             $ref: examples/EmbeddedEditUrl.py
+        -
+          lang: cURL
+          label: cURL
+          source:
+            $ref: examples/EmbeddedEditUrl.sh
+      x-meta:
+        seo:
+          title: '_t__EmbeddedEditUrl::SEO::TITLE'
+          description: '_t__EmbeddedEditUrl::SEO::DESCRIPTION'
   '/embedded/sign_url/{signature_id}':
     get:
       tags:
@@ -1108,6 +1301,13 @@ paths:
       responses:
         '200':
           description: 'successful operation'
+          headers:
+            X-RateLimit-Limit:
+              $ref: '#/components/headers/X-RateLimit-Limit'
+            X-RateLimit-Remaining:
+              $ref: '#/components/headers/X-RateLimit-Remaining'
+            X-Ratelimit-Reset:
+              $ref: '#/components/headers/X-Ratelimit-Reset'
           content:
             application/json:
               schema:
@@ -1180,6 +1380,15 @@ paths:
           label: Python
           source:
             $ref: examples/EmbeddedSignUrl.py
+        -
+          lang: cURL
+          label: cURL
+          source:
+            $ref: examples/EmbeddedSignUrl.sh
+      x-meta:
+        seo:
+          title: '_t__EmbeddedSignUrl::SEO::TITLE'
+          description: '_t__EmbeddedSignUrl::SEO::DESCRIPTION'
   /oauth/token:
     post:
       tags:
@@ -1199,6 +1408,13 @@ paths:
       responses:
         '200':
           description: 'successful operation'
+          headers:
+            X-RateLimit-Limit:
+              $ref: '#/components/headers/X-RateLimit-Limit'
+            X-RateLimit-Remaining:
+              $ref: '#/components/headers/X-RateLimit-Remaining'
+            X-Ratelimit-Reset:
+              $ref: '#/components/headers/X-Ratelimit-Reset'
           content:
             application/json:
               schema:
@@ -1246,7 +1462,16 @@ paths:
           label: Python
           source:
             $ref: examples/OauthTokenGenerate.py
+        -
+          lang: cURL
+          label: cURL
+          source:
+            $ref: examples/OauthTokenGenerate.sh
       x-hideTryItPanel: true
+      x-meta:
+        seo:
+          title: '_t__OAuthTokenGenerate::SEO::TITLE'
+          description: '_t__OAuthTokenGenerate::SEO::DESCRIPTION'
   '/oauth/token?refresh':
     post:
       tags:
@@ -1266,6 +1491,13 @@ paths:
       responses:
         '200':
           description: 'successful operation'
+          headers:
+            X-RateLimit-Limit:
+              $ref: '#/components/headers/X-RateLimit-Limit'
+            X-RateLimit-Remaining:
+              $ref: '#/components/headers/X-RateLimit-Remaining'
+            X-Ratelimit-Reset:
+              $ref: '#/components/headers/X-Ratelimit-Reset'
           content:
             application/json:
               schema:
@@ -1313,7 +1545,16 @@ paths:
           label: Python
           source:
             $ref: examples/OauthTokenRefresh.py
+        -
+          lang: cURL
+          label: cURL
+          source:
+            $ref: examples/OauthTokenRefresh.sh
       x-hideTryItPanel: true
+      x-meta:
+        seo:
+          title: '_t__OAuthTokenRefresh::SEO::TITLE'
+          description: '_t__OAuthTokenRefresh::SEO::DESCRIPTION'
   /report/create:
     post:
       tags:
@@ -1333,6 +1574,13 @@ paths:
       responses:
         '200':
           description: 'successful operation'
+          headers:
+            X-RateLimit-Limit:
+              $ref: '#/components/headers/X-RateLimit-Limit'
+            X-RateLimit-Remaining:
+              $ref: '#/components/headers/X-RateLimit-Remaining'
+            X-Ratelimit-Reset:
+              $ref: '#/components/headers/X-Ratelimit-Reset'
           content:
             application/json:
               schema:
@@ -1396,6 +1644,15 @@ paths:
           label: Python
           source:
             $ref: examples/ReportCreate.py
+        -
+          lang: cURL
+          label: cURL
+          source:
+            $ref: examples/ReportCreate.sh
+      x-meta:
+        seo:
+          title: '_t__ReportCreate::SEO::TITLE'
+          description: '_t__ReportCreate::SEO::DESCRIPTION'
   /signature_request/bulk_create_embedded_with_template:
     post:
       tags:
@@ -1415,12 +1672,16 @@ paths:
           multipart/form-data:
             schema:
               $ref: '#/components/schemas/SignatureRequestBulkCreateEmbeddedWithTemplateRequest'
-            examples:
-              default_example:
-                $ref: '#/components/examples/SignatureRequestBulkCreateEmbeddedWithTemplateRequestFormDataExample'
       responses:
         '200':
           description: 'successful operation'
+          headers:
+            X-RateLimit-Limit:
+              $ref: '#/components/headers/X-RateLimit-Limit'
+            X-RateLimit-Remaining:
+              $ref: '#/components/headers/X-RateLimit-Remaining'
+            X-Ratelimit-Reset:
+              $ref: '#/components/headers/X-Ratelimit-Reset'
           content:
             application/json:
               schema:
@@ -1490,6 +1751,15 @@ paths:
           label: Python
           source:
             $ref: examples/SignatureRequestBulkCreateEmbeddedWithTemplate.py
+        -
+          lang: cURL
+          label: cURL
+          source:
+            $ref: examples/SignatureRequestBulkCreateEmbeddedWithTemplate.sh
+      x-meta:
+        seo:
+          title: '_t__SignatureRequestBulkCreateEmbeddedWithTemplate::SEO::TITLE'
+          description: '_t__SignatureRequestBulkCreateEmbeddedWithTemplate::SEO::DESCRIPTION'
   /signature_request/bulk_send_with_template:
     post:
       tags:
@@ -1509,12 +1779,16 @@ paths:
           multipart/form-data:
             schema:
               $ref: '#/components/schemas/SignatureRequestBulkSendWithTemplateRequest'
-            examples:
-              default_example:
-                $ref: '#/components/examples/SignatureRequestBulkSendWithTemplateRequestFormDataExample'
       responses:
         '200':
           description: 'successful operation'
+          headers:
+            X-RateLimit-Limit:
+              $ref: '#/components/headers/X-RateLimit-Limit'
+            X-RateLimit-Remaining:
+              $ref: '#/components/headers/X-RateLimit-Remaining'
+            X-Ratelimit-Reset:
+              $ref: '#/components/headers/X-Ratelimit-Reset'
           content:
             application/json:
               schema:
@@ -1584,6 +1858,15 @@ paths:
           label: Python
           source:
             $ref: examples/SignatureRequestBulkSendWithTemplate.py
+        -
+          lang: cURL
+          label: cURL
+          source:
+            $ref: examples/SignatureRequestBulkSendWithTemplate.sh
+      x-meta:
+        seo:
+          title: '_t__SignatureRequestBulkSendWithTemplate::SEO::TITLE'
+          description: '_t__SignatureRequestBulkSendWithTemplate::SEO::DESCRIPTION'
   '/signature_request/cancel/{signature_request_id}':
     post:
       tags:
@@ -1603,6 +1886,13 @@ paths:
       responses:
         '200':
           description: 'successful operation'
+          headers:
+            X-RateLimit-Limit:
+              $ref: '#/components/headers/X-RateLimit-Limit'
+            X-RateLimit-Remaining:
+              $ref: '#/components/headers/X-RateLimit-Remaining'
+            X-Ratelimit-Reset:
+              $ref: '#/components/headers/X-Ratelimit-Reset'
           content:
             application/json: {  }
         4XX:
@@ -1671,6 +1961,15 @@ paths:
           label: Python
           source:
             $ref: examples/SignatureRequestCancel.py
+        -
+          lang: cURL
+          label: cURL
+          source:
+            $ref: examples/SignatureRequestCancel.sh
+      x-meta:
+        seo:
+          title: '_t__SignatureRequestCancel::SEO::TITLE'
+          description: '_t__SignatureRequestCancel::SEO::DESCRIPTION'
   /signature_request/create_embedded:
     post:
       tags:
@@ -1690,12 +1989,16 @@ paths:
           multipart/form-data:
             schema:
               $ref: '#/components/schemas/SignatureRequestCreateEmbeddedRequest'
-            examples:
-              default_example:
-                $ref: '#/components/examples/SignatureRequestCreateEmbeddedRequestFormDataExample'
       responses:
         '200':
           description: 'successful operation'
+          headers:
+            X-RateLimit-Limit:
+              $ref: '#/components/headers/X-RateLimit-Limit'
+            X-RateLimit-Remaining:
+              $ref: '#/components/headers/X-RateLimit-Remaining'
+            X-Ratelimit-Reset:
+              $ref: '#/components/headers/X-Ratelimit-Reset'
           content:
             application/json:
               schema:
@@ -1766,6 +2069,15 @@ paths:
           label: Python
           source:
             $ref: examples/SignatureRequestCreateEmbedded.py
+        -
+          lang: cURL
+          label: cURL
+          source:
+            $ref: examples/SignatureRequestCreateEmbedded.sh
+      x-meta:
+        seo:
+          title: '_t__SignatureRequestCreateEmbedded::SEO::TITLE'
+          description: '_t__SignatureRequestCreateEmbedded::SEO::DESCRIPTION'
   /signature_request/create_embedded_with_template:
     post:
       tags:
@@ -1785,12 +2097,16 @@ paths:
           multipart/form-data:
             schema:
               $ref: '#/components/schemas/SignatureRequestCreateEmbeddedWithTemplateRequest'
-            examples:
-              default_example:
-                $ref: '#/components/examples/SignatureRequestCreateEmbeddedWithTemplateRequestFormDataExample'
       responses:
         '200':
           description: 'successful operation'
+          headers:
+            X-RateLimit-Limit:
+              $ref: '#/components/headers/X-RateLimit-Limit'
+            X-RateLimit-Remaining:
+              $ref: '#/components/headers/X-RateLimit-Remaining'
+            X-Ratelimit-Reset:
+              $ref: '#/components/headers/X-Ratelimit-Reset'
           content:
             application/json:
               schema:
@@ -1861,6 +2177,15 @@ paths:
           label: Python
           source:
             $ref: examples/SignatureRequestCreateEmbeddedWithTemplate.py
+        -
+          lang: cURL
+          label: cURL
+          source:
+            $ref: examples/SignatureRequestCreateEmbeddedWithTemplate.sh
+      x-meta:
+        seo:
+          title: '_t__SignatureRequestCreateEmbeddedWithTemplate::SEO::TITLE'
+          description: '_t__SignatureRequestCreateEmbeddedWithTemplate::SEO::DESCRIPTION'
   '/signature_request/files/{signature_request_id}':
     get:
       tags:
@@ -1887,30 +2212,25 @@ paths:
             enum:
               - pdf
               - zip
-        -
-          name: get_url
-          in: query
-          description: '_t__SignatureRequestFiles::GET_URL'
-          schema:
-            type: boolean
-            default: false
-        -
-          name: get_data_uri
-          in: query
-          description: '_t__SignatureRequestFiles::GET_DATA_URI'
-          schema:
-            type: boolean
-            default: false
       responses:
         '200':
           description: 'successful operation'
+          headers:
+            X-RateLimit-Limit:
+              $ref: '#/components/headers/X-RateLimit-Limit'
+            X-RateLimit-Remaining:
+              $ref: '#/components/headers/X-RateLimit-Remaining'
+            X-Ratelimit-Reset:
+              $ref: '#/components/headers/X-Ratelimit-Reset'
           content:
-            application/json:
+            application/pdf:
               schema:
-                $ref: '#/components/schemas/FileResponse'
-              examples:
-                default_example:
-                  $ref: '#/components/examples/SignatureRequestFilesResponseExample'
+                type: string
+                format: binary
+            application/zip:
+              schema:
+                type: string
+                format: binary
         4XX:
           description: failed_operation
           content:
@@ -1979,6 +2299,235 @@ paths:
           label: Python
           source:
             $ref: examples/SignatureRequestFiles.py
+        -
+          lang: cURL
+          label: cURL
+          source:
+            $ref: examples/SignatureRequestFiles.sh
+      x-meta:
+        seo:
+          title: '_t__SignatureRequestFiles::SEO::TITLE'
+          description: '_t__SignatureRequestFiles::SEO::DESCRIPTION'
+  '/signature_request/files_as_data_uri/{signature_request_id}':
+    get:
+      tags:
+        - 'Signature Request'
+      summary: '_t__SignatureRequestFilesAsDataUri::SUMMARY'
+      description: '_t__SignatureRequestFilesAsDataUri::DESCRIPTION'
+      operationId: signatureRequestFilesAsDataUri
+      parameters:
+        -
+          name: signature_request_id
+          in: path
+          description: '_t__SignatureRequestFiles::SIGNATURE_REQUEST_ID'
+          required: true
+          schema:
+            type: string
+          example: fa5c8a0b0f492d768749333ad6fcc214c111e967
+      responses:
+        '200':
+          description: 'successful operation'
+          headers:
+            X-RateLimit-Limit:
+              $ref: '#/components/headers/X-RateLimit-Limit'
+            X-RateLimit-Remaining:
+              $ref: '#/components/headers/X-RateLimit-Remaining'
+            X-Ratelimit-Reset:
+              $ref: '#/components/headers/X-Ratelimit-Reset'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FileResponseDataUri'
+              examples:
+                default_example:
+                  $ref: '#/components/examples/SignatureRequestFilesResponseExample'
+        4XX:
+          description: failed_operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              examples:
+                400_example:
+                  $ref: '#/components/examples/Error400ResponseExample'
+                401_example:
+                  $ref: '#/components/examples/Error401ResponseExample'
+                402_example:
+                  $ref: '#/components/examples/Error402ResponseExample'
+                403_example:
+                  $ref: '#/components/examples/Error403ResponseExample'
+                404_example:
+                  $ref: '#/components/examples/Error404ResponseExample'
+                409_example:
+                  $ref: '#/components/examples/Error409ResponseExample'
+                410_example:
+                  $ref: '#/components/examples/Error410ResponseExample'
+                429_example:
+                  $ref: '#/components/examples/Error429ResponseExample'
+                4XX_example:
+                  $ref: '#/components/examples/Error4XXResponseExample'
+      security:
+        -
+          api_key: []
+        -
+          oauth2:
+            - signature_request_access
+            - request_signature
+      x-codeSamples:
+        -
+          lang: PHP
+          label: PHP
+          source:
+            $ref: examples/SignatureRequestFilesAsDataUri.php
+        -
+          lang: 'C#'
+          label: 'C#'
+          source:
+            $ref: examples/SignatureRequestFilesAsDataUri.cs
+        -
+          lang: JavaScript
+          label: JavaScript
+          source:
+            $ref: examples/SignatureRequestFilesAsDataUri.js
+        -
+          lang: TypeScript
+          label: TypeScript
+          source:
+            $ref: examples/SignatureRequestFilesAsDataUri.ts
+        -
+          lang: Java
+          label: Java
+          source:
+            $ref: examples/SignatureRequestFilesAsDataUri.java
+        -
+          lang: Ruby
+          label: Ruby
+          source:
+            $ref: examples/SignatureRequestFilesAsDataUri.rb
+        -
+          lang: Python
+          label: Python
+          source:
+            $ref: examples/SignatureRequestFilesAsDataUri.py
+        -
+          lang: cURL
+          label: cURL
+          source:
+            $ref: examples/SignatureRequestFilesAsDataUri.sh
+      x-meta:
+        seo:
+          title: '_t__SignatureRequestFiles::SEO::TITLE'
+          description: '_t__SignatureRequestFiles::SEO::DESCRIPTION'
+  '/signature_request/files_as_file_url/{signature_request_id}':
+    get:
+      tags:
+        - 'Signature Request'
+      summary: '_t__SignatureRequestFilesAsFileUrl::SUMMARY'
+      description: '_t__SignatureRequestFilesAsFileUrl::DESCRIPTION'
+      operationId: signatureRequestFilesAsFileUrl
+      parameters:
+        -
+          name: signature_request_id
+          in: path
+          description: '_t__SignatureRequestFiles::SIGNATURE_REQUEST_ID'
+          required: true
+          schema:
+            type: string
+          example: fa5c8a0b0f492d768749333ad6fcc214c111e967
+      responses:
+        '200':
+          description: 'successful operation'
+          headers:
+            X-RateLimit-Limit:
+              $ref: '#/components/headers/X-RateLimit-Limit'
+            X-RateLimit-Remaining:
+              $ref: '#/components/headers/X-RateLimit-Remaining'
+            X-Ratelimit-Reset:
+              $ref: '#/components/headers/X-Ratelimit-Reset'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FileResponse'
+              examples:
+                default_example:
+                  $ref: '#/components/examples/SignatureRequestFilesResponseExample'
+        4XX:
+          description: failed_operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              examples:
+                400_example:
+                  $ref: '#/components/examples/Error400ResponseExample'
+                401_example:
+                  $ref: '#/components/examples/Error401ResponseExample'
+                402_example:
+                  $ref: '#/components/examples/Error402ResponseExample'
+                403_example:
+                  $ref: '#/components/examples/Error403ResponseExample'
+                404_example:
+                  $ref: '#/components/examples/Error404ResponseExample'
+                409_example:
+                  $ref: '#/components/examples/Error409ResponseExample'
+                410_example:
+                  $ref: '#/components/examples/Error410ResponseExample'
+                429_example:
+                  $ref: '#/components/examples/Error429ResponseExample'
+                4XX_example:
+                  $ref: '#/components/examples/Error4XXResponseExample'
+      security:
+        -
+          api_key: []
+        -
+          oauth2:
+            - signature_request_access
+            - request_signature
+      x-codeSamples:
+        -
+          lang: PHP
+          label: PHP
+          source:
+            $ref: examples/SignatureRequestFilesAsFileUrl.php
+        -
+          lang: 'C#'
+          label: 'C#'
+          source:
+            $ref: examples/SignatureRequestFilesAsFileUrl.cs
+        -
+          lang: JavaScript
+          label: JavaScript
+          source:
+            $ref: examples/SignatureRequestFilesAsFileUrl.js
+        -
+          lang: TypeScript
+          label: TypeScript
+          source:
+            $ref: examples/SignatureRequestFilesAsFileUrl.ts
+        -
+          lang: Java
+          label: Java
+          source:
+            $ref: examples/SignatureRequestFilesAsFileUrl.java
+        -
+          lang: Ruby
+          label: Ruby
+          source:
+            $ref: examples/SignatureRequestFilesAsFileUrl.rb
+        -
+          lang: Python
+          label: Python
+          source:
+            $ref: examples/SignatureRequestFilesAsFileUrl.py
+        -
+          lang: cURL
+          label: cURL
+          source:
+            $ref: examples/SignatureRequestFilesAsFileUrl.sh
+      x-meta:
+        seo:
+          title: '_t__SignatureRequestFiles::SEO::TITLE'
+          description: '_t__SignatureRequestFiles::SEO::DESCRIPTION'
   '/signature_request/{signature_request_id}':
     get:
       tags:
@@ -1998,6 +2547,13 @@ paths:
       responses:
         '200':
           description: 'successful operation'
+          headers:
+            X-RateLimit-Limit:
+              $ref: '#/components/headers/X-RateLimit-Limit'
+            X-RateLimit-Remaining:
+              $ref: '#/components/headers/X-RateLimit-Remaining'
+            X-Ratelimit-Reset:
+              $ref: '#/components/headers/X-Ratelimit-Reset'
           content:
             application/json:
               schema:
@@ -2069,6 +2625,15 @@ paths:
           label: Python
           source:
             $ref: examples/SignatureRequestGet.py
+        -
+          lang: cURL
+          label: cURL
+          source:
+            $ref: examples/SignatureRequestGet.sh
+      x-meta:
+        seo:
+          title: '_t__SignatureRequestGet::SEO::TITLE'
+          description: '_t__SignatureRequestGet::SEO::DESCRIPTION'
   /signature_request/list:
     get:
       tags:
@@ -2107,6 +2672,13 @@ paths:
       responses:
         '200':
           description: 'successful operation'
+          headers:
+            X-RateLimit-Limit:
+              $ref: '#/components/headers/X-RateLimit-Limit'
+            X-RateLimit-Remaining:
+              $ref: '#/components/headers/X-RateLimit-Remaining'
+            X-Ratelimit-Reset:
+              $ref: '#/components/headers/X-Ratelimit-Reset'
           content:
             application/json:
               schema:
@@ -2176,6 +2748,15 @@ paths:
           label: Python
           source:
             $ref: examples/SignatureRequestList.py
+        -
+          lang: cURL
+          label: cURL
+          source:
+            $ref: examples/SignatureRequestList.sh
+      x-meta:
+        seo:
+          title: '_t__SignatureRequestList::SEO::TITLE'
+          description: '_t__SignatureRequestList::SEO::DESCRIPTION'
   '/signature_request/release_hold/{signature_request_id}':
     post:
       tags:
@@ -2195,6 +2776,13 @@ paths:
       responses:
         '200':
           description: 'successful operation'
+          headers:
+            X-RateLimit-Limit:
+              $ref: '#/components/headers/X-RateLimit-Limit'
+            X-RateLimit-Remaining:
+              $ref: '#/components/headers/X-RateLimit-Remaining'
+            X-Ratelimit-Reset:
+              $ref: '#/components/headers/X-Ratelimit-Reset'
           content:
             application/json:
               schema:
@@ -2263,6 +2851,15 @@ paths:
           label: Python
           source:
             $ref: examples/SignatureRequestReleaseHold.py
+        -
+          lang: cURL
+          label: cURL
+          source:
+            $ref: examples/SignatureRequestReleaseHold.sh
+      x-meta:
+        seo:
+          title: '_t__SignatureRequestReleaseHold::SEO::TITLE'
+          description: '_t__SignatureRequestReleaseHold::SEO::DESCRIPTION'
   '/signature_request/remind/{signature_request_id}':
     post:
       tags:
@@ -2291,6 +2888,13 @@ paths:
       responses:
         '200':
           description: 'successful operation'
+          headers:
+            X-RateLimit-Limit:
+              $ref: '#/components/headers/X-RateLimit-Limit'
+            X-RateLimit-Remaining:
+              $ref: '#/components/headers/X-RateLimit-Remaining'
+            X-Ratelimit-Reset:
+              $ref: '#/components/headers/X-Ratelimit-Reset'
           content:
             application/json:
               schema:
@@ -2366,6 +2970,15 @@ paths:
           label: Python
           source:
             $ref: examples/SignatureRequestRemind.py
+        -
+          lang: cURL
+          label: cURL
+          source:
+            $ref: examples/SignatureRequestRemind.sh
+      x-meta:
+        seo:
+          title: '_t__SignatureRequestRemind::SEO::TITLE'
+          description: '_t__SignatureRequestRemind::SEO::DESCRIPTION'
   '/signature_request/remove/{signature_request_id}':
     post:
       tags:
@@ -2385,6 +2998,13 @@ paths:
       responses:
         '200':
           description: 'successful operation'
+          headers:
+            X-RateLimit-Limit:
+              $ref: '#/components/headers/X-RateLimit-Limit'
+            X-RateLimit-Remaining:
+              $ref: '#/components/headers/X-RateLimit-Remaining'
+            X-Ratelimit-Reset:
+              $ref: '#/components/headers/X-Ratelimit-Reset'
           content:
             application/json: {  }
         4XX:
@@ -2449,6 +3069,15 @@ paths:
           label: Python
           source:
             $ref: examples/SignatureRequestRemove.py
+        -
+          lang: cURL
+          label: cURL
+          source:
+            $ref: examples/SignatureRequestRemove.sh
+      x-meta:
+        seo:
+          title: '_t__SignatureRequestRemove::SEO::TITLE'
+          description: '_t__SignatureRequestRemove::SEO::DESCRIPTION'
   /signature_request/send:
     post:
       tags:
@@ -2468,12 +3097,16 @@ paths:
           multipart/form-data:
             schema:
               $ref: '#/components/schemas/SignatureRequestSendRequest'
-            examples:
-              default_example:
-                $ref: '#/components/examples/SignatureRequestSendFormDataExample'
       responses:
         '200':
           description: 'successful operation'
+          headers:
+            X-RateLimit-Limit:
+              $ref: '#/components/headers/X-RateLimit-Limit'
+            X-RateLimit-Remaining:
+              $ref: '#/components/headers/X-RateLimit-Remaining'
+            X-Ratelimit-Reset:
+              $ref: '#/components/headers/X-Ratelimit-Reset'
           content:
             application/json:
               schema:
@@ -2545,6 +3178,15 @@ paths:
           label: Python
           source:
             $ref: examples/SignatureRequestSend.py
+        -
+          lang: cURL
+          label: cURL
+          source:
+            $ref: examples/SignatureRequestSend.sh
+      x-meta:
+        seo:
+          title: '_t__SignatureRequestSend::SEO::TITLE'
+          description: '_t__SignatureRequestSend::SEO::DESCRIPTION'
   /signature_request/send_with_template:
     post:
       tags:
@@ -2564,12 +3206,16 @@ paths:
           multipart/form-data:
             schema:
               $ref: '#/components/schemas/SignatureRequestSendWithTemplateRequest'
-            examples:
-              default_example:
-                $ref: '#/components/examples/SignatureRequestSendWithTemplateRequestFormDataExample'
       responses:
         '200':
           description: 'successful operation'
+          headers:
+            X-RateLimit-Limit:
+              $ref: '#/components/headers/X-RateLimit-Limit'
+            X-RateLimit-Remaining:
+              $ref: '#/components/headers/X-RateLimit-Remaining'
+            X-Ratelimit-Reset:
+              $ref: '#/components/headers/X-Ratelimit-Reset'
           content:
             application/json:
               schema:
@@ -2639,6 +3285,15 @@ paths:
           label: Python
           source:
             $ref: examples/SignatureRequestSendWithTemplate.py
+        -
+          lang: cURL
+          label: cURL
+          source:
+            $ref: examples/SignatureRequestSendWithTemplate.sh
+      x-meta:
+        seo:
+          title: '_t__SignatureRequestSendWithTemplate::SEO::TITLE'
+          description: '_t__SignatureRequestSendWithTemplate::SEO::DESCRIPTION'
   '/signature_request/update/{signature_request_id}':
     post:
       tags:
@@ -2667,6 +3322,13 @@ paths:
       responses:
         '200':
           description: 'successful operation'
+          headers:
+            X-RateLimit-Limit:
+              $ref: '#/components/headers/X-RateLimit-Limit'
+            X-RateLimit-Remaining:
+              $ref: '#/components/headers/X-RateLimit-Remaining'
+            X-Ratelimit-Reset:
+              $ref: '#/components/headers/X-Ratelimit-Reset'
           content:
             application/json:
               schema:
@@ -2735,6 +3397,15 @@ paths:
           label: Python
           source:
             $ref: examples/SignatureRequestUpdate.py
+        -
+          lang: cURL
+          label: cURL
+          source:
+            $ref: examples/SignatureRequestUpdate.sh
+      x-meta:
+        seo:
+          title: '_t__SignatureRequestUpdate::SEO::TITLE'
+          description: '_t__SignatureRequestUpdate::SEO::DESCRIPTION'
   /team/add_member:
     put:
       tags:
@@ -2751,7 +3422,7 @@ paths:
           schema:
             type: string
           example: 4fea99bfcf2b26bfccf6cea3e127fb8bb74d8d9c
-          x-hideOn: doc
+          x-beta: closed
       requestBody:
         required: true
         content:
@@ -2766,6 +3437,13 @@ paths:
       responses:
         '200':
           description: 'successful operation'
+          headers:
+            X-RateLimit-Limit:
+              $ref: '#/components/headers/X-RateLimit-Limit'
+            X-RateLimit-Remaining:
+              $ref: '#/components/headers/X-RateLimit-Remaining'
+            X-Ratelimit-Reset:
+              $ref: '#/components/headers/X-Ratelimit-Reset'
           content:
             application/json:
               schema:
@@ -2834,6 +3512,15 @@ paths:
           label: Python
           source:
             $ref: examples/TeamAddMember.py
+        -
+          lang: cURL
+          label: cURL
+          source:
+            $ref: examples/TeamAddMember.sh
+      x-meta:
+        seo:
+          title: '_t__TeamAddMember::SEO::TITLE'
+          description: '_t__TeamAddMember::SEO::DESCRIPTION'
   /team/create:
     post:
       tags:
@@ -2853,6 +3540,13 @@ paths:
       responses:
         '200':
           description: 'successful operation'
+          headers:
+            X-RateLimit-Limit:
+              $ref: '#/components/headers/X-RateLimit-Limit'
+            X-RateLimit-Remaining:
+              $ref: '#/components/headers/X-RateLimit-Remaining'
+            X-Ratelimit-Reset:
+              $ref: '#/components/headers/X-Ratelimit-Reset'
           content:
             application/json:
               schema:
@@ -2919,6 +3613,15 @@ paths:
           label: Python
           source:
             $ref: examples/TeamCreate.py
+        -
+          lang: cURL
+          label: cURL
+          source:
+            $ref: examples/TeamCreate.sh
+      x-meta:
+        seo:
+          title: '_t__TeamCreate::SEO::TITLE'
+          description: '_t__TeamCreate::SEO::DESCRIPTION'
   /team/destroy:
     delete:
       tags:
@@ -2929,6 +3632,13 @@ paths:
       responses:
         '200':
           description: 'successful operation'
+          headers:
+            X-RateLimit-Limit:
+              $ref: '#/components/headers/X-RateLimit-Limit'
+            X-RateLimit-Remaining:
+              $ref: '#/components/headers/X-RateLimit-Remaining'
+            X-Ratelimit-Reset:
+              $ref: '#/components/headers/X-Ratelimit-Reset'
         4XX:
           description: failed_operation
           content:
@@ -2988,6 +3698,15 @@ paths:
           label: Python
           source:
             $ref: examples/TeamDelete.py
+        -
+          lang: cURL
+          label: cURL
+          source:
+            $ref: examples/TeamDelete.sh
+      x-meta:
+        seo:
+          title: '_t__TeamDelete::SEO::TITLE'
+          description: '_t__TeamDelete::SEO::DESCRIPTION'
   /team:
     get:
       tags:
@@ -2998,6 +3717,13 @@ paths:
       responses:
         '200':
           description: 'successful operation'
+          headers:
+            X-RateLimit-Limit:
+              $ref: '#/components/headers/X-RateLimit-Limit'
+            X-RateLimit-Remaining:
+              $ref: '#/components/headers/X-RateLimit-Remaining'
+            X-Ratelimit-Reset:
+              $ref: '#/components/headers/X-Ratelimit-Reset'
           content:
             application/json:
               schema:
@@ -3066,6 +3792,15 @@ paths:
           label: Python
           source:
             $ref: examples/TeamGet.py
+        -
+          lang: cURL
+          label: cURL
+          source:
+            $ref: examples/TeamGet.sh
+      x-meta:
+        seo:
+          title: '_t__TeamGet::SEO::TITLE'
+          description: '_t__TeamGet::SEO::DESCRIPTION'
     put:
       tags:
         - Team
@@ -3084,6 +3819,13 @@ paths:
       responses:
         '200':
           description: 'successful operation'
+          headers:
+            X-RateLimit-Limit:
+              $ref: '#/components/headers/X-RateLimit-Limit'
+            X-RateLimit-Remaining:
+              $ref: '#/components/headers/X-RateLimit-Remaining'
+            X-Ratelimit-Reset:
+              $ref: '#/components/headers/X-Ratelimit-Reset'
           content:
             application/json:
               schema:
@@ -3150,6 +3892,15 @@ paths:
           label: Python
           source:
             $ref: examples/TeamUpdate.py
+        -
+          lang: cURL
+          label: cURL
+          source:
+            $ref: examples/TeamUpdate.sh
+      x-meta:
+        seo:
+          title: '_t__TeamUpdate::SEO::TITLE'
+          description: '_t__TeamUpdate::SEO::DESCRIPTION'
   /team/info:
     get:
       tags:
@@ -3169,6 +3920,13 @@ paths:
       responses:
         '200':
           description: 'successful operation'
+          headers:
+            X-RateLimit-Limit:
+              $ref: '#/components/headers/X-RateLimit-Limit'
+            X-RateLimit-Remaining:
+              $ref: '#/components/headers/X-RateLimit-Remaining'
+            X-Ratelimit-Reset:
+              $ref: '#/components/headers/X-Ratelimit-Reset'
           content:
             application/json:
               schema:
@@ -3239,7 +3997,117 @@ paths:
           label: Python
           source:
             $ref: examples/TeamInfo.py
-      x-hideOn: doc
+        -
+          lang: cURL
+          label: cURL
+          source:
+            $ref: examples/TeamInfo.sh
+      x-beta: closed
+      x-meta:
+        seo:
+          title: '_t__TeamInfo::SEO::TITLE'
+          description: '_t__TeamInfo::SEO::DESCRIPTION'
+  /team/invites:
+    get:
+      tags:
+        - Team
+      summary: '_t__TeamInvites::SUMMARY'
+      description: '_t__TeamInvites::DESCRIPTION'
+      operationId: teamInvites
+      parameters:
+        -
+          name: email_address
+          in: query
+          description: '_t__TeamInvites::EMAIL_ADDRESS'
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: 'successful operation'
+          headers:
+            X-RateLimit-Limit:
+              $ref: '#/components/headers/X-RateLimit-Limit'
+            X-RateLimit-Remaining:
+              $ref: '#/components/headers/X-RateLimit-Remaining'
+            X-Ratelimit-Reset:
+              $ref: '#/components/headers/X-Ratelimit-Reset'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TeamInvitesResponse'
+              examples:
+                default_example:
+                  $ref: '#/components/examples/TeamInvitesResponseExample'
+        4XX:
+          description: failed_operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              examples:
+                400_example:
+                  $ref: '#/components/examples/Error400ResponseExample'
+                401_example:
+                  $ref: '#/components/examples/Error401ResponseExample'
+                402_example:
+                  $ref: '#/components/examples/Error402ResponseExample'
+                403_example:
+                  $ref: '#/components/examples/Error403ResponseExample'
+                4XX_example:
+                  $ref: '#/components/examples/Error4XXResponseExample'
+      security:
+        -
+          api_key: []
+        -
+          oauth2:
+            - account_access
+            - basic_account_info
+      x-codeSamples:
+        -
+          lang: PHP
+          label: PHP
+          source:
+            $ref: examples/TeamInvites.php
+        -
+          lang: 'C#'
+          label: 'C#'
+          source:
+            $ref: examples/TeamInvites.cs
+        -
+          lang: JavaScript
+          label: JavaScript
+          source:
+            $ref: examples/TeamInvites.js
+        -
+          lang: TypeScript
+          label: TypeScript
+          source:
+            $ref: examples/TeamInvites.ts
+        -
+          lang: Java
+          label: Java
+          source:
+            $ref: examples/TeamInvites.java
+        -
+          lang: Ruby
+          label: Ruby
+          source:
+            $ref: examples/TeamInvites.rb
+        -
+          lang: Python
+          label: Python
+          source:
+            $ref: examples/TeamInvites.py
+        -
+          lang: cURL
+          label: cURL
+          source:
+            $ref: examples/TeamInvites.sh
+      x-meta:
+        seo:
+          title: '_t__TeamInvites::SEO::TITLE'
+          description: '_t__TeamInvites::SEO::DESCRIPTION'
   '/team/members/{team_id}':
     get:
       tags:
@@ -3275,6 +4143,13 @@ paths:
       responses:
         '200':
           description: 'successful operation'
+          headers:
+            X-RateLimit-Limit:
+              $ref: '#/components/headers/X-RateLimit-Limit'
+            X-RateLimit-Remaining:
+              $ref: '#/components/headers/X-RateLimit-Remaining'
+            X-Ratelimit-Reset:
+              $ref: '#/components/headers/X-Ratelimit-Reset'
           content:
             application/json:
               schema:
@@ -3345,7 +4220,16 @@ paths:
           label: Python
           source:
             $ref: examples/TeamMembers.py
-      x-hideOn: doc
+        -
+          lang: cURL
+          label: cURL
+          source:
+            $ref: examples/TeamMembers.sh
+      x-beta: closed
+      x-meta:
+        seo:
+          title: '_t__TeamMembers::SEO::TITLE'
+          description: '_t__TeamMembers::SEO::DESCRIPTION'
   /team/remove_member:
     post:
       tags:
@@ -3367,6 +4251,13 @@ paths:
       responses:
         '200':
           description: 'successful operation'
+          headers:
+            X-RateLimit-Limit:
+              $ref: '#/components/headers/X-RateLimit-Limit'
+            X-RateLimit-Remaining:
+              $ref: '#/components/headers/X-RateLimit-Remaining'
+            X-Ratelimit-Reset:
+              $ref: '#/components/headers/X-Ratelimit-Reset'
           content:
             application/json:
               schema:
@@ -3435,6 +4326,15 @@ paths:
           label: Python
           source:
             $ref: examples/TeamRemoveMember.py
+        -
+          lang: cURL
+          label: cURL
+          source:
+            $ref: examples/TeamRemoveMember.sh
+      x-meta:
+        seo:
+          title: '_t__TeamRemoveMember::SEO::TITLE'
+          description: '_t__TeamRemoveMember::SEO::DESCRIPTION'
   '/team/sub_teams/{team_id}':
     get:
       tags:
@@ -3470,6 +4370,13 @@ paths:
       responses:
         '200':
           description: 'successful operation'
+          headers:
+            X-RateLimit-Limit:
+              $ref: '#/components/headers/X-RateLimit-Limit'
+            X-RateLimit-Remaining:
+              $ref: '#/components/headers/X-RateLimit-Remaining'
+            X-Ratelimit-Reset:
+              $ref: '#/components/headers/X-Ratelimit-Reset'
           content:
             application/json:
               schema:
@@ -3540,7 +4447,16 @@ paths:
           label: Python
           source:
             $ref: examples/TeamSubTeams.py
-      x-hideOn: doc
+        -
+          lang: cURL
+          label: cURL
+          source:
+            $ref: examples/TeamSubTeams.sh
+      x-beta: closed
+      x-meta:
+        seo:
+          title: '_t__TeamSubTeams::SEO::TITLE'
+          description: '_t__TeamSubTeams::SEO::DESCRIPTION'
   '/template/add_user/{template_id}':
     post:
       tags:
@@ -3569,6 +4485,13 @@ paths:
       responses:
         '200':
           description: 'successful operation'
+          headers:
+            X-RateLimit-Limit:
+              $ref: '#/components/headers/X-RateLimit-Limit'
+            X-RateLimit-Remaining:
+              $ref: '#/components/headers/X-RateLimit-Remaining'
+            X-Ratelimit-Reset:
+              $ref: '#/components/headers/X-Ratelimit-Reset'
           content:
             application/json:
               schema:
@@ -3637,6 +4560,15 @@ paths:
           label: Python
           source:
             $ref: examples/TemplateAddUser.py
+        -
+          lang: cURL
+          label: cURL
+          source:
+            $ref: examples/TemplateAddUser.sh
+      x-meta:
+        seo:
+          title: '_t__TemplateAddUser::SEO::TITLE'
+          description: '_t__TemplateAddUser::SEO::DESCRIPTION'
   /template/create_embedded_draft:
     post:
       tags:
@@ -3662,12 +4594,16 @@ paths:
           multipart/form-data:
             schema:
               $ref: '#/components/schemas/TemplateCreateEmbeddedDraftRequest'
-            examples:
-              default_example:
-                $ref: '#/components/examples/TemplateCreateEmbeddedDraftRequestFormDataExample'
       responses:
         '200':
           description: 'successful operation'
+          headers:
+            X-RateLimit-Limit:
+              $ref: '#/components/headers/X-RateLimit-Limit'
+            X-RateLimit-Remaining:
+              $ref: '#/components/headers/X-RateLimit-Remaining'
+            X-Ratelimit-Reset:
+              $ref: '#/components/headers/X-Ratelimit-Reset'
           content:
             application/json:
               schema:
@@ -3738,6 +4674,15 @@ paths:
           label: Python
           source:
             $ref: examples/TemplateCreateEmbeddedDraft.py
+        -
+          lang: cURL
+          label: cURL
+          source:
+            $ref: examples/TemplateCreateEmbeddedDraft.sh
+      x-meta:
+        seo:
+          title: '_t__TemplateCreateEmbeddedDraft::SEO::TITLE'
+          description: '_t__TemplateCreateEmbeddedDraft::SEO::DESCRIPTION'
   '/template/delete/{template_id}':
     post:
       tags:
@@ -3757,6 +4702,13 @@ paths:
       responses:
         '200':
           description: 'successful operation'
+          headers:
+            X-RateLimit-Limit:
+              $ref: '#/components/headers/X-RateLimit-Limit'
+            X-RateLimit-Remaining:
+              $ref: '#/components/headers/X-RateLimit-Remaining'
+            X-Ratelimit-Reset:
+              $ref: '#/components/headers/X-Ratelimit-Reset'
           content:
             application/json: {  }
         4XX:
@@ -3822,6 +4774,15 @@ paths:
           label: Python
           source:
             $ref: examples/TemplateDelete.py
+        -
+          lang: cURL
+          label: cURL
+          source:
+            $ref: examples/TemplateDelete.sh
+      x-meta:
+        seo:
+          title: '_t__TemplateDelete::SEO::TITLE'
+          description: '_t__TemplateDelete::SEO::DESCRIPTION'
   '/template/files/{template_id}':
     get:
       tags:
@@ -3847,30 +4808,25 @@ paths:
             enum:
               - pdf
               - zip
-        -
-          name: get_url
-          in: query
-          description: '_t__TemplateFiles::GET_URL'
-          schema:
-            type: boolean
-            default: false
-        -
-          name: get_data_uri
-          in: query
-          description: '_t__TemplateFiles::GET_DATA_URI'
-          schema:
-            type: boolean
-            default: false
       responses:
         '200':
           description: 'successful operation'
+          headers:
+            X-RateLimit-Limit:
+              $ref: '#/components/headers/X-RateLimit-Limit'
+            X-RateLimit-Remaining:
+              $ref: '#/components/headers/X-RateLimit-Remaining'
+            X-Ratelimit-Reset:
+              $ref: '#/components/headers/X-Ratelimit-Reset'
           content:
-            application/json:
+            application/pdf:
               schema:
-                $ref: '#/components/schemas/FileResponse'
-              examples:
-                default_example:
-                  $ref: '#/components/examples/TemplateFilesResponseExample'
+                type: string
+                format: binary
+            application/zip:
+              schema:
+                type: string
+                format: binary
         4XX:
           description: failed_operation
           content:
@@ -3938,6 +4894,233 @@ paths:
           label: Python
           source:
             $ref: examples/TemplateFiles.py
+        -
+          lang: cURL
+          label: cURL
+          source:
+            $ref: examples/TemplateFiles.sh
+      x-meta:
+        seo:
+          title: '_t__TemplateFiles::SEO::TITLE'
+          description: '_t__TemplateFiles::SEO::DESCRIPTION'
+  '/template/files_as_data_uri/{template_id}':
+    get:
+      tags:
+        - Template
+      summary: '_t__TemplateFilesAsDataUri::SUMMARY'
+      description: '_t__TemplateFilesAsDataUri::DESCRIPTION'
+      operationId: templateFilesAsDataUri
+      parameters:
+        -
+          name: template_id
+          in: path
+          description: '_t__TemplateFiles::TEMPLATE_ID'
+          required: true
+          schema:
+            type: string
+          example: f57db65d3f933b5316d398057a36176831451a35
+      responses:
+        '200':
+          description: 'successful operation'
+          headers:
+            X-RateLimit-Limit:
+              $ref: '#/components/headers/X-RateLimit-Limit'
+            X-RateLimit-Remaining:
+              $ref: '#/components/headers/X-RateLimit-Remaining'
+            X-Ratelimit-Reset:
+              $ref: '#/components/headers/X-Ratelimit-Reset'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FileResponseDataUri'
+              examples:
+                default_example:
+                  $ref: '#/components/examples/TemplateFilesResponseExample'
+        4XX:
+          description: failed_operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              examples:
+                400_example:
+                  $ref: '#/components/examples/Error400ResponseExample'
+                401_example:
+                  $ref: '#/components/examples/Error401ResponseExample'
+                402_example:
+                  $ref: '#/components/examples/Error402ResponseExample'
+                403_example:
+                  $ref: '#/components/examples/Error403ResponseExample'
+                404_example:
+                  $ref: '#/components/examples/Error404ResponseExample'
+                409_example:
+                  $ref: '#/components/examples/Error409ResponseExample'
+                422_example:
+                  $ref: '#/components/examples/Error422ResponseExample'
+                429_example:
+                  $ref: '#/components/examples/Error429ResponseExample'
+                4XX_example:
+                  $ref: '#/components/examples/Error4XXResponseExample'
+      security:
+        -
+          api_key: []
+        -
+          oauth2:
+            - template_access
+      x-codeSamples:
+        -
+          lang: PHP
+          label: PHP
+          source:
+            $ref: examples/TemplateFilesAsDataUri.php
+        -
+          lang: 'C#'
+          label: 'C#'
+          source:
+            $ref: examples/TemplateFilesAsDataUri.cs
+        -
+          lang: JavaScript
+          label: JavaScript
+          source:
+            $ref: examples/TemplateFilesAsDataUri.js
+        -
+          lang: TypeScript
+          label: TypeScript
+          source:
+            $ref: examples/TemplateFilesAsDataUri.ts
+        -
+          lang: Java
+          label: Java
+          source:
+            $ref: examples/TemplateFilesAsDataUri.java
+        -
+          lang: Ruby
+          label: Ruby
+          source:
+            $ref: examples/TemplateFilesAsDataUri.rb
+        -
+          lang: Python
+          label: Python
+          source:
+            $ref: examples/TemplateFilesAsDataUri.py
+        -
+          lang: cURL
+          label: cURL
+          source:
+            $ref: examples/TemplateFilesAsDataUri.sh
+      x-meta:
+        seo:
+          title: '_t__TemplateFiles::SEO::TITLE'
+          description: '_t__TemplateFiles::SEO::DESCRIPTION'
+  '/template/files_as_file_url/{template_id}':
+    get:
+      tags:
+        - Template
+      summary: '_t__TemplateFilesAsFileUrl::SUMMARY'
+      description: '_t__TemplateFilesAsFileUrl::DESCRIPTION'
+      operationId: templateFilesAsFileUrl
+      parameters:
+        -
+          name: template_id
+          in: path
+          description: '_t__TemplateFiles::TEMPLATE_ID'
+          required: true
+          schema:
+            type: string
+          example: f57db65d3f933b5316d398057a36176831451a35
+      responses:
+        '200':
+          description: 'successful operation'
+          headers:
+            X-RateLimit-Limit:
+              $ref: '#/components/headers/X-RateLimit-Limit'
+            X-RateLimit-Remaining:
+              $ref: '#/components/headers/X-RateLimit-Remaining'
+            X-Ratelimit-Reset:
+              $ref: '#/components/headers/X-Ratelimit-Reset'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FileResponse'
+              examples:
+                default_example:
+                  $ref: '#/components/examples/TemplateFilesResponseExample'
+        4XX:
+          description: failed_operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              examples:
+                400_example:
+                  $ref: '#/components/examples/Error400ResponseExample'
+                401_example:
+                  $ref: '#/components/examples/Error401ResponseExample'
+                402_example:
+                  $ref: '#/components/examples/Error402ResponseExample'
+                403_example:
+                  $ref: '#/components/examples/Error403ResponseExample'
+                404_example:
+                  $ref: '#/components/examples/Error404ResponseExample'
+                409_example:
+                  $ref: '#/components/examples/Error409ResponseExample'
+                422_example:
+                  $ref: '#/components/examples/Error422ResponseExample'
+                429_example:
+                  $ref: '#/components/examples/Error429ResponseExample'
+                4XX_example:
+                  $ref: '#/components/examples/Error4XXResponseExample'
+      security:
+        -
+          api_key: []
+        -
+          oauth2:
+            - template_access
+      x-codeSamples:
+        -
+          lang: PHP
+          label: PHP
+          source:
+            $ref: examples/TemplateFilesAsFileUrl.php
+        -
+          lang: 'C#'
+          label: 'C#'
+          source:
+            $ref: examples/TemplateFilesAsFileUrl.cs
+        -
+          lang: JavaScript
+          label: JavaScript
+          source:
+            $ref: examples/TemplateFilesAsFileUrl.js
+        -
+          lang: TypeScript
+          label: TypeScript
+          source:
+            $ref: examples/TemplateFilesAsFileUrl.ts
+        -
+          lang: Java
+          label: Java
+          source:
+            $ref: examples/TemplateFilesAsFileUrl.java
+        -
+          lang: Ruby
+          label: Ruby
+          source:
+            $ref: examples/TemplateFilesAsFileUrl.rb
+        -
+          lang: Python
+          label: Python
+          source:
+            $ref: examples/TemplateFilesAsFileUrl.py
+        -
+          lang: cURL
+          label: cURL
+          source:
+            $ref: examples/TemplateFilesAsFileUrl.sh
+      x-meta:
+        seo:
+          title: '_t__TemplateFiles::SEO::TITLE'
+          description: '_t__TemplateFiles::SEO::DESCRIPTION'
   '/template/{template_id}':
     get:
       tags:
@@ -3957,6 +5140,13 @@ paths:
       responses:
         '200':
           description: 'successful operation'
+          headers:
+            X-RateLimit-Limit:
+              $ref: '#/components/headers/X-RateLimit-Limit'
+            X-RateLimit-Remaining:
+              $ref: '#/components/headers/X-RateLimit-Remaining'
+            X-Ratelimit-Reset:
+              $ref: '#/components/headers/X-Ratelimit-Reset'
           content:
             application/json:
               schema:
@@ -4027,6 +5217,15 @@ paths:
           label: Python
           source:
             $ref: examples/TemplateGet.py
+        -
+          lang: cURL
+          label: cURL
+          source:
+            $ref: examples/TemplateGet.sh
+      x-meta:
+        seo:
+          title: '_t__TemplateGet::SEO::TITLE'
+          description: '_t__TemplateGet::SEO::DESCRIPTION'
   /template/list:
     get:
       tags:
@@ -4066,6 +5265,13 @@ paths:
       responses:
         '200':
           description: 'successful operation'
+          headers:
+            X-RateLimit-Limit:
+              $ref: '#/components/headers/X-RateLimit-Limit'
+            X-RateLimit-Remaining:
+              $ref: '#/components/headers/X-RateLimit-Remaining'
+            X-Ratelimit-Reset:
+              $ref: '#/components/headers/X-Ratelimit-Reset'
           content:
             application/json:
               schema:
@@ -4136,6 +5342,15 @@ paths:
           label: Python
           source:
             $ref: examples/TemplateList.py
+        -
+          lang: cURL
+          label: cURL
+          source:
+            $ref: examples/TemplateList.sh
+      x-meta:
+        seo:
+          title: '_t__TemplateList::SEO::TITLE'
+          description: '_t__TemplateList::SEO::DESCRIPTION'
   '/template/remove_user/{template_id}':
     post:
       tags:
@@ -4164,6 +5379,13 @@ paths:
       responses:
         '200':
           description: 'successful operation'
+          headers:
+            X-RateLimit-Limit:
+              $ref: '#/components/headers/X-RateLimit-Limit'
+            X-RateLimit-Remaining:
+              $ref: '#/components/headers/X-RateLimit-Remaining'
+            X-Ratelimit-Reset:
+              $ref: '#/components/headers/X-Ratelimit-Reset'
           content:
             application/json:
               schema:
@@ -4232,6 +5454,15 @@ paths:
           label: Python
           source:
             $ref: examples/TemplateRemoveUser.py
+        -
+          lang: cURL
+          label: cURL
+          source:
+            $ref: examples/TemplateRemoveUser.sh
+      x-meta:
+        seo:
+          title: '_t__TemplateRemoveUser::SEO::TITLE'
+          description: '_t__TemplateRemoveUser::SEO::DESCRIPTION'
   '/template/update_files/{template_id}':
     post:
       tags:
@@ -4260,12 +5491,16 @@ paths:
           multipart/form-data:
             schema:
               $ref: '#/components/schemas/TemplateUpdateFilesRequest'
-            examples:
-              default_example:
-                $ref: '#/components/examples/TemplateUpdateFilesRequestFormDataExample'
       responses:
         '200':
           description: 'successful operation'
+          headers:
+            X-RateLimit-Limit:
+              $ref: '#/components/headers/X-RateLimit-Limit'
+            X-RateLimit-Remaining:
+              $ref: '#/components/headers/X-RateLimit-Remaining'
+            X-Ratelimit-Reset:
+              $ref: '#/components/headers/X-Ratelimit-Reset'
           content:
             application/json:
               schema:
@@ -4338,6 +5573,15 @@ paths:
           label: Python
           source:
             $ref: examples/TemplateUpdateFiles.py
+        -
+          lang: cURL
+          label: cURL
+          source:
+            $ref: examples/TemplateUpdateFiles.sh
+      x-meta:
+        seo:
+          title: '_t__TemplateUpdateFiles::SEO::TITLE'
+          description: '_t__TemplateUpdateFiles::SEO::DESCRIPTION'
   /unclaimed_draft/create:
     post:
       tags:
@@ -4363,12 +5607,16 @@ paths:
           multipart/form-data:
             schema:
               $ref: '#/components/schemas/UnclaimedDraftCreateRequest'
-            examples:
-              default_example:
-                $ref: '#/components/examples/UnclaimedDraftCreateRequestFormDataExample'
       responses:
         '200':
           description: 'successful operation'
+          headers:
+            X-RateLimit-Limit:
+              $ref: '#/components/headers/X-RateLimit-Limit'
+            X-RateLimit-Remaining:
+              $ref: '#/components/headers/X-RateLimit-Remaining'
+            X-Ratelimit-Reset:
+              $ref: '#/components/headers/X-Ratelimit-Reset'
           content:
             application/json:
               schema:
@@ -4435,6 +5683,15 @@ paths:
           label: Python
           source:
             $ref: examples/UnclaimedDraftCreate.py
+        -
+          lang: cURL
+          label: cURL
+          source:
+            $ref: examples/UnclaimedDraftCreate.sh
+      x-meta:
+        seo:
+          title: '_t__UnclaimedDraftCreate::SEO::TITLE'
+          description: '_t__UnclaimedDraftCreate::SEO::DESCRIPTION'
   /unclaimed_draft/create_embedded:
     post:
       tags:
@@ -4460,12 +5717,16 @@ paths:
           multipart/form-data:
             schema:
               $ref: '#/components/schemas/UnclaimedDraftCreateEmbeddedRequest'
-            examples:
-              default_example:
-                $ref: '#/components/examples/UnclaimedDraftCreateEmbeddedRequestFormDataExample'
       responses:
         '200':
           description: 'successful operation'
+          headers:
+            X-RateLimit-Limit:
+              $ref: '#/components/headers/X-RateLimit-Limit'
+            X-RateLimit-Remaining:
+              $ref: '#/components/headers/X-RateLimit-Remaining'
+            X-Ratelimit-Reset:
+              $ref: '#/components/headers/X-Ratelimit-Reset'
           content:
             application/json:
               schema:
@@ -4537,6 +5798,15 @@ paths:
           label: Python
           source:
             $ref: examples/UnclaimedDraftCreateEmbedded.py
+        -
+          lang: cURL
+          label: cURL
+          source:
+            $ref: examples/UnclaimedDraftCreateEmbedded.sh
+      x-meta:
+        seo:
+          title: '_t__UnclaimedDraftCreateEmbedded::SEO::TITLE'
+          description: '_t__UnclaimedDraftCreateEmbedded::SEO::DESCRIPTION'
   /unclaimed_draft/create_embedded_with_template:
     post:
       tags:
@@ -4556,12 +5826,16 @@ paths:
           multipart/form-data:
             schema:
               $ref: '#/components/schemas/UnclaimedDraftCreateEmbeddedWithTemplateRequest'
-            examples:
-              default_example:
-                $ref: '#/components/examples/UnclaimedDraftCreateEmbeddedWithTemplateRequestFormDataExample'
       responses:
         '200':
           description: 'successful operation'
+          headers:
+            X-RateLimit-Limit:
+              $ref: '#/components/headers/X-RateLimit-Limit'
+            X-RateLimit-Remaining:
+              $ref: '#/components/headers/X-RateLimit-Remaining'
+            X-Ratelimit-Reset:
+              $ref: '#/components/headers/X-Ratelimit-Reset'
           content:
             application/json:
               schema:
@@ -4634,6 +5908,15 @@ paths:
           label: Python
           source:
             $ref: examples/UnclaimedDraftCreateEmbeddedWithTemplate.py
+        -
+          lang: cURL
+          label: cURL
+          source:
+            $ref: examples/UnclaimedDraftCreateEmbeddedWithTemplate.sh
+      x-meta:
+        seo:
+          title: '_t__UnclaimedDraftCreateEmbeddedWithTemplate::SEO::TITLE'
+          description: '_t__UnclaimedDraftCreateEmbeddedWithTemplate::SEO::DESCRIPTION'
   '/unclaimed_draft/edit_and_resend/{signature_request_id}':
     post:
       tags:
@@ -4662,6 +5945,13 @@ paths:
       responses:
         '200':
           description: 'successful operation'
+          headers:
+            X-RateLimit-Limit:
+              $ref: '#/components/headers/X-RateLimit-Limit'
+            X-RateLimit-Remaining:
+              $ref: '#/components/headers/X-RateLimit-Remaining'
+            X-Ratelimit-Reset:
+              $ref: '#/components/headers/X-Ratelimit-Reset'
           content:
             application/json:
               schema:
@@ -4735,6 +6025,15 @@ paths:
           label: Python
           source:
             $ref: examples/UnclaimedDraftEditAndResend.py
+        -
+          lang: cURL
+          label: cURL
+          source:
+            $ref: examples/UnclaimedDraftEditAndResend.sh
+      x-meta:
+        seo:
+          title: '_t__UnclaimedDraftEditAndResend::SEO::TITLE'
+          description: '_t__UnclaimedDraftEditAndResend::SEO::DESCRIPTION'
 components:
   schemas:
     AccountCreateRequest:
@@ -5381,6 +6680,16 @@ components:
           description: '_t__SignatureRequestCreateEmbedded::USE_TEXT_TAGS'
           type: boolean
           default: false
+        populate_auto_fill_fields:
+          description: '_t__SignatureRequestCreateEmbedded::POPULATE_AUTO_FILL_FIELDS'
+          type: boolean
+          default: false
+          x-beta: closed
+        expires_at:
+          nullable: true
+          description: '_t__UnclaimedDraftCreateEmbedded::EXPIRES_AT'
+          type: integer
+          x-beta: closed
       type: object
     SignatureRequestCreateEmbeddedWithTemplateRequest:
       description: 'Calls SignatureRequestSend in controller'
@@ -5450,6 +6759,11 @@ components:
           description: '_t__SignatureRequestCreateEmbeddedWithTemplate::TITLE'
           type: string
           maxLength: 255
+        populate_auto_fill_fields:
+          description: '_t__SignatureRequestCreateEmbeddedWithTemplate::POPULATE_AUTO_FILL_FIELDS'
+          type: boolean
+          default: false
+          x-beta: closed
       type: object
     SignatureRequestRemindRequest:
       required:
@@ -5565,6 +6879,11 @@ components:
           description: '_t__SignatureRequestSend::USE_PREEXISTING_FIELDS'
           type: boolean
           default: false
+        expires_at:
+          nullable: true
+          description: '_t__SignatureRequestSend::EXPIRES_AT'
+          type: integer
+          x-beta: closed
       type: object
     SignatureRequestSendWithTemplateRequest:
       description: ''
@@ -5655,6 +6974,11 @@ components:
         signature_id:
           description: '_t__SignatureRequestUpdate::SIGNATURE_ID'
           type: string
+        expires_at:
+          nullable: true
+          description: '_t__SignatureRequestUpdate::EXPIRES_AT'
+          type: integer
+          x-beta: closed
       type: object
     SubAttachment:
       required:
@@ -5996,6 +7320,7 @@ components:
           enum:
             - authentication
             - delivery
+          x-beta: closed
       type: object
     SubSignatureRequestTemplateSigner:
       required:
@@ -6027,6 +7352,7 @@ components:
           enum:
             - authentication
             - delivery
+          x-beta: closed
       type: object
     SubUnclaimedDraftSigner:
       required:
@@ -6163,6 +7489,15 @@ components:
           description: '_t__TeamAddMember::EMAIL_ADDRESS'
           type: string
           format: email
+        role:
+          description: '_t__TeamAddMember::ROLE'
+          type: string
+          enum:
+            - Member
+            - Developer
+            - 'Team Manager'
+            - Admin
+          x-beta: closed
       type: object
     TeamCreateRequest:
       properties:
@@ -6187,7 +7522,7 @@ components:
         new_team_id:
           description: '_t__TeamRemoveMember::NEW_TEAM_ID'
           type: string
-          x-hideOn: doc
+          x-beta: closed
         new_role:
           description: '_t__TeamRemoveMember::NEW_ROLE'
           type: string
@@ -6196,7 +7531,7 @@ components:
             - Developer
             - 'Team Manager'
             - Admin
-          x-hideOn: doc
+          x-beta: closed
       type: object
     TeamUpdateRequest:
       properties:
@@ -6472,6 +7807,11 @@ components:
           description: '_t__UnclaimedDraftCreate::USE_TEXT_TAGS'
           type: boolean
           default: false
+        expires_at:
+          nullable: true
+          description: '_t__UnclaimedDraftCreate::EXPIRES_AT'
+          type: integer
+          x-beta: closed
       type: object
     UnclaimedDraftCreateEmbeddedRequest:
       description: ''
@@ -6620,6 +7960,16 @@ components:
           description: '_t__UnclaimedDraftCreateEmbedded::USE_TEXT_TAGS'
           type: boolean
           default: false
+        populate_auto_fill_fields:
+          description: '_t__UnclaimedDraftCreateEmbedded::POPULATE_AUTO_FILL_FIELDS'
+          type: boolean
+          default: false
+          x-beta: closed
+        expires_at:
+          nullable: true
+          description: '_t__UnclaimedDraftCreateEmbedded::EXPIRES_AT'
+          type: integer
+          x-beta: closed
       type: object
     UnclaimedDraftCreateEmbeddedWithTemplateRequest:
       required:
@@ -6738,6 +8088,11 @@ components:
           description: '_t__UnclaimedDraftCreateEmbeddedWithTemplate::TITLE'
           type: string
           maxLength: 255
+        populate_auto_fill_fields:
+          description: '_t__UnclaimedDraftCreateEmbeddedWithTemplate::POPULATE_AUTO_FILL_FIELDS'
+          type: boolean
+          default: false
+          x-beta: closed
       type: object
     UnclaimedDraftEditAndResendRequest:
       required:
@@ -6797,6 +8152,10 @@ components:
           nullable: true
           description: '_t__Account::ROLE_CODE'
           type: string
+        team_id:
+          nullable: true
+          description: '_t__Account::TEAM_ID'
+          type: string
         locale:
           nullable: true
           description: '_t__Account::LOCALE'
@@ -6855,6 +8214,10 @@ components:
         documents_left:
           nullable: true
           description: '_t__AccountQuota::DOCUMENTS_LEFT'
+          type: integer
+        total_templates:
+          nullable: true
+          description: '_t__AccountQuota::TOTAL_TEMPLATES'
           type: integer
         templates_left:
           nullable: true
@@ -6999,6 +8362,7 @@ components:
         text_color2:
           type: string
       type: object
+      nullable: true
       x-internal: true
     BulkSendJobResponse:
       description: '_t__BulkSendJobResponse::DESCRIPTION'
@@ -7142,34 +8506,8 @@ components:
           description: '_t__ErrorResponseError::ERROR_NAME'
           type: string
       type: object
-    EventCallbackAccountRequest:
-      required:
-        - json
-      properties:
-        json:
-          $ref: '#/components/schemas/EventCallbackAccountRequestPayload'
-      type: object
-    EventCallbackAccountRequestPayload:
-      title: EventCallbackAccountRequestPayload
-      required:
-        - event
-      properties:
-        event:
-          $ref: '#/components/schemas/EventCallbackRequestEvent'
-        signature_request:
-          $ref: '#/components/schemas/SignatureRequestResponse'
-        template:
-          $ref: '#/components/schemas/TemplateResponse'
-      type: object
-    EventCallbackApiAppRequest:
-      required:
-        - json
-      properties:
-        json:
-          $ref: '#/components/schemas/EventCallbackApiAppRequestPayload'
-      type: object
-    EventCallbackApiAppRequestPayload:
-      title: EventCallbackApiAppRequestPayload
+    EventCallbackRequest:
+      title: EventCallbackRequest
       required:
         - event
       properties:
@@ -7215,6 +8553,7 @@ components:
             - signature_request_reassigned
             - signature_request_invalid
             - signature_request_prepared
+            - signature_request_expired
             - template_created
             - template_error
         event_hash:
@@ -7253,6 +8592,13 @@ components:
           type: integer
       type: object
       x-internal: true
+    FileResponseDataUri:
+      properties:
+        data_uri:
+          description: '_t__FileResponse::DATA_URI'
+          type: string
+      type: object
+      x-internal: true
     ListInfoResponse:
       description: '_t__ListInfoResponse::DESCRIPTION'
       properties:
@@ -7271,6 +8617,153 @@ components:
           type: integer
       type: object
       x-internal: true
+    SignatureRequestResponseDataTypeEnum:
+      type: string
+      enum:
+        - text
+        - checkbox
+        - date_signed
+        - dropdown
+        - initials
+        - radio
+        - signature
+        - text-merge
+        - checkbox-merge
+    SignatureRequestResponseDataValueText:
+      type: object
+      allOf:
+        -
+          $ref: '#/components/schemas/SignatureRequestResponseDataBase'
+        -
+          properties:
+            type:
+              description: '_t__SignatureRequestResponseDataValue::TEXT_TYPE'
+              type: string
+              default: text
+            value:
+              description: '_t__SignatureRequestResponseDataValue::VALUE'
+              type: string
+          type: object
+    SignatureRequestResponseDataValueDropdown:
+      type: object
+      allOf:
+        -
+          $ref: '#/components/schemas/SignatureRequestResponseDataBase'
+        -
+          properties:
+            type:
+              description: '_t__SignatureRequestResponseDataValue::DROPDOWN_TYPE'
+              type: string
+              default: dropdown
+            value:
+              description: '_t__SignatureRequestResponseDataValue::VALUE'
+              type: string
+          type: object
+    SignatureRequestResponseDataValueRadio:
+      type: object
+      allOf:
+        -
+          $ref: '#/components/schemas/SignatureRequestResponseDataBase'
+        -
+          properties:
+            type:
+              description: '_t__SignatureRequestResponseDataValue::RADIO_TYPE'
+              type: string
+              default: radio
+            value:
+              description: '_t__SignatureRequestResponseDataValue::VALUE'
+              type: boolean
+          type: object
+    SignatureRequestResponseDataValueDateSigned:
+      type: object
+      allOf:
+        -
+          $ref: '#/components/schemas/SignatureRequestResponseDataBase'
+        -
+          properties:
+            type:
+              description: '_t__SignatureRequestResponseDataValue::DATESIGNED_TYPE'
+              type: string
+              default: date_signed
+            value:
+              description: '_t__SignatureRequestResponseDataValue::VALUE'
+              type: string
+          type: object
+    SignatureRequestResponseDataValueInitials:
+      type: object
+      allOf:
+        -
+          $ref: '#/components/schemas/SignatureRequestResponseDataBase'
+        -
+          properties:
+            type:
+              description: '_t__SignatureRequestResponseDataValue::INITIAL_TYPE'
+              type: string
+              default: initials
+            value:
+              description: '_t__SignatureRequestResponseDataValue::VALUE'
+              type: string
+          type: object
+    SignatureRequestResponseDataValueCheckbox:
+      type: object
+      allOf:
+        -
+          $ref: '#/components/schemas/SignatureRequestResponseDataBase'
+        -
+          properties:
+            type:
+              description: '_t__SignatureRequestResponseDataValue::CHECKBOX_TYPE'
+              type: string
+              default: checkbox
+            value:
+              description: '_t__SignatureRequestResponseDataValue::VALUE'
+              type: boolean
+          type: object
+    SignatureRequestResponseDataValueSignature:
+      type: object
+      allOf:
+        -
+          $ref: '#/components/schemas/SignatureRequestResponseDataBase'
+        -
+          properties:
+            type:
+              description: '_t__SignatureRequestResponseDataValue::SIGNATURE_TYPE'
+              type: string
+              default: signature
+            value:
+              description: '_t__SignatureRequestResponseDataValue::VALUE'
+              type: string
+          type: object
+    SignatureRequestResponseDataValueTextMerge:
+      type: object
+      allOf:
+        -
+          $ref: '#/components/schemas/SignatureRequestResponseDataBase'
+        -
+          properties:
+            type:
+              description: '_t__SignatureRequestResponseDataValue::TEXTMERGE_TYPE'
+              type: string
+              default: text-merge
+            value:
+              description: '_t__SignatureRequestResponseDataValue::VALUE'
+              type: string
+          type: object
+    SignatureRequestResponseDataValueCheckboxMerge:
+      type: object
+      allOf:
+        -
+          $ref: '#/components/schemas/SignatureRequestResponseDataBase'
+        -
+          properties:
+            type:
+              description: '_t__SignatureRequestResponseDataValue::CHECKBOXMERGE_TYPE'
+              type: string
+              default: checkbox-merge
+            value:
+              description: '_t__SignatureRequestResponseDataValue::VALUE'
+              type: string
+          type: object
     OAuthTokenResponse:
       properties:
         access_token:
@@ -7340,6 +8833,7 @@ components:
           description: '_t__SignatureRequestResponse::ORIGINAL_TITLE'
           type: string
         subject:
+          nullable: true
           description: '_t__SignatureRequestResponse::SUBJECT'
           type: string
         message:
@@ -7352,6 +8846,10 @@ components:
         created_at:
           description: '_t__SignatureRequestResponse::CREATED_AT'
           type: integer
+        expires_at:
+          description: '_t__SignatureRequestResponse::EXPIRES_AT'
+          type: integer
+          x-beta: closed
         is_complete:
           description: '_t__SignatureRequestResponse::IS_COMPLETE'
           type: boolean
@@ -7403,7 +8901,7 @@ components:
           description: '_t__SignatureRequestResponseData::DESCRIPTION'
           type: array
           items:
-            $ref: '#/components/schemas/SignatureRequestResponseData'
+            $ref: '#/components/schemas/SignatureRequestResponseDataBase'
         signatures:
           description: '_t__SignatureRequestResponseSignatures::DESCRIPTION'
           type: array
@@ -7540,7 +9038,7 @@ components:
               description: '_t__SignatureRequestResponseCustomField::VALUE_CHECKBOX'
               type: boolean
           type: object
-    SignatureRequestResponseData:
+    SignatureRequestResponseDataBase:
       description: '_t__SignatureRequestResponseData::DESCRIPTION'
       properties:
         api_id:
@@ -7552,26 +9050,26 @@ components:
         name:
           description: '_t__SignatureRequestResponseData::NAME'
           type: string
-        value:
-          description: '_t__SignatureRequestResponseData::VALUE'
-          type: string
         required:
           description: '_t__SignatureRequestResponseData::REQUIRED'
           type: boolean
         type:
-          description: '_t__SignatureRequestResponseData::TYPE'
-          enum:
-            - text
-            - checkbox
-            - date_signed
-            - dropdown
-            - initials
-            - radio
-            - signature
-            - text-merge
-            - checkbox-merge
+          type: string
       type: object
+      discriminator:
+        propertyName: type
+        mapping:
+          text: '#/components/schemas/SignatureRequestResponseDataValueText'
+          checkbox: '#/components/schemas/SignatureRequestResponseDataValueCheckbox'
+          dropdown: '#/components/schemas/SignatureRequestResponseDataValueDropdown'
+          radio: '#/components/schemas/SignatureRequestResponseDataValueRadio'
+          signature: '#/components/schemas/SignatureRequestResponseDataValueSignature'
+          date_signed: '#/components/schemas/SignatureRequestResponseDataValueDateSigned'
+          initials: '#/components/schemas/SignatureRequestResponseDataValueInitials'
+          text-merge: '#/components/schemas/SignatureRequestResponseDataValueTextMerge'
+          checkbox-merge: '#/components/schemas/SignatureRequestResponseDataValueCheckboxMerge'
       x-internal: true
+      x-base-class: true
     SignatureRequestResponseSignatures:
       description: '_t__SignatureRequestResponseSignatures::DESCRIPTION'
       properties:
@@ -7582,6 +9080,7 @@ components:
           description: '_t__SignatureRequestResponseSignatures::SIGNER_EMAIL_ADDRESS'
           type: string
         signer_name:
+          nullable: true
           description: '_t__SignatureRequestResponseSignatures::SIGNER_NAME'
           type: string
         signer_role:
@@ -7633,6 +9132,10 @@ components:
         reassignment_reason:
           nullable: true
           description: '_t__SignatureRequestResponseSignatures::REASSIGNMENT_REASON'
+          type: string
+        reassigned_from:
+          nullable: true
+          description: '_t__SignatureRequestResponseSignatures::REASSIGNED_FROM'
           type: string
         error:
           nullable: true
@@ -7709,6 +9212,41 @@ components:
         role:
           description: '_t__TeamMemberResponse::MEMBER_ROLE'
           type: string
+      type: object
+      x-internal: true
+    TeamInviteResponse:
+      properties:
+        email_address:
+          description: '_t__TeamInviteResponse::EMAIL_ADDRESS'
+          type: string
+        team_id:
+          description: '_t__TeamInviteResponse::TEAM_ID'
+          type: string
+        role:
+          description: '_t__TeamInviteResponse::ROLE'
+          type: string
+        sent_at:
+          description: '_t__TeamInviteResponse::SENT_AT'
+          type: integer
+        redeemed_at:
+          description: '_t__TeamInviteResponse::REDEEMED_AT'
+          type: integer
+        expires_at:
+          description: '_t__TeamInviteResponse::EXPIRES_AT'
+          type: integer
+      type: object
+      x-internal: true
+    TeamInvitesResponse:
+      properties:
+        team_invites:
+          description: '_t__TeamInvitesResponse::DESCRIPTION'
+          type: array
+          items:
+            $ref: '#/components/schemas/TeamInviteResponse'
+        warnings:
+          type: array
+          items:
+            $ref: '#/components/schemas/WarningResponse'
       type: object
       x-internal: true
     SubTeamResponse:
@@ -8355,18 +9893,10 @@ components:
       summary: 'Default Example'
       value:
         $ref: examples/json/ApiAppCreateRequestDefaultExample.json
-    ApiAppCreateRequestFormDataExample:
-      summary: 'With Custom Logo File Example'
-      value:
-        $ref: examples/json/ApiAppCreateRequestFormDataExample.json
     ApiAppUpdateRequestDefaultExample:
       summary: 'Default Example'
       value:
         $ref: examples/json/ApiAppUpdateRequestDefaultExample.json
-    ApiAppUpdateRequestFormDataExample:
-      summary: 'With Custom Logo File Example'
-      value:
-        $ref: examples/json/ApiAppUpdateRequestFormDataExample.json
     EmbeddedEditUrlRequestDefaultExample:
       summary: 'Default Example'
       value:
@@ -8387,34 +9917,18 @@ components:
       summary: 'Default Example'
       value:
         $ref: examples/json/SignatureRequestBulkCreateEmbeddedWithTemplateRequestDefaultExample.json
-    SignatureRequestBulkCreateEmbeddedWithTemplateRequestFormDataExample:
-      summary: 'With Signer File Example'
-      value:
-        $ref: examples/json/SignatureRequestBulkCreateEmbeddedWithTemplateRequestFormDataExample.json
     SignatureRequestBulkSendWithTemplateRequestDefaultExample:
       summary: 'Default Example'
       value:
         $ref: examples/json/SignatureRequestBulkSendWithTemplateRequestDefaultExample.json
-    SignatureRequestBulkSendWithTemplateRequestFormDataExample:
-      summary: 'With Signer File Example'
-      value:
-        $ref: examples/json/SignatureRequestBulkSendWithTemplateRequestFormDataExample.json
     SignatureRequestCreateEmbeddedRequestDefaultExample:
       summary: 'Default Example'
       value:
         $ref: examples/json/SignatureRequestCreateEmbeddedRequestDefaultExample.json
-    SignatureRequestCreateEmbeddedRequestFormDataExample:
-      summary: 'With File Example'
-      value:
-        $ref: examples/json/SignatureRequestCreateEmbeddedRequestFormDataExample.json
     SignatureRequestCreateEmbeddedWithTemplateRequestDefaultExample:
       summary: 'Default Example'
       value:
         $ref: examples/json/SignatureRequestCreateEmbeddedWithTemplateRequestDefaultExample.json
-    SignatureRequestCreateEmbeddedWithTemplateRequestFormDataExample:
-      summary: 'With Signer File Example'
-      value:
-        $ref: examples/json/SignatureRequestCreateEmbeddedWithTemplateRequestFormDataExample.json
     SignatureRequestRemindRequestDefaultExample:
       summary: 'Default Example'
       value:
@@ -8423,18 +9937,10 @@ components:
       summary: 'Default Example'
       value:
         $ref: examples/json/SignatureRequestSendRequestDefaultExample.json
-    SignatureRequestSendFormDataExample:
-      summary: 'With File Example'
-      value:
-        $ref: examples/json/SignatureRequestSendFormDataExample.json
     SignatureRequestSendWithTemplateRequestDefaultExample:
       summary: 'Default Example'
       value:
         $ref: examples/json/SignatureRequestSendWithTemplateRequestDefaultExample.json
-    SignatureRequestSendWithTemplateRequestFormDataExample:
-      summary: 'With File Example'
-      value:
-        $ref: examples/json/SignatureRequestSendWithTemplateRequestFormDataExample.json
     SignatureRequestUpdateRequestDefaultExample:
       summary: 'Default Example'
       value:
@@ -8483,10 +9989,6 @@ components:
       summary: 'Form Fields Per Document and Rules Example'
       value:
         $ref: examples/json/TemplateCreateEmbeddedDraftRequestFormFieldRulesExample.json
-    TemplateCreateEmbeddedDraftRequestFormDataExample:
-      summary: 'With File Example'
-      value:
-        $ref: examples/json/TemplateCreateEmbeddedDraftRequestFormDataExample.json
     TemplateRemoveUserRequestDefaultExample:
       summary: 'Default Example'
       value:
@@ -8495,10 +9997,6 @@ components:
       summary: 'Default Example'
       value:
         $ref: examples/json/TemplateUpdateFilesRequestDefaultExample.json
-    TemplateUpdateFilesRequestFormDataExample:
-      summary: 'With File Example'
-      value:
-        $ref: examples/json/TemplateUpdateFilesRequestFormDataExample.json
     UnclaimedDraftCreateRequestDefaultExample:
       summary: 'Default Example'
       value:
@@ -8515,10 +10013,6 @@ components:
       summary: 'Form Fields Per Document and Rules Example'
       value:
         $ref: examples/json/UnclaimedDraftCreateRequestFormFieldRulesExample.json
-    UnclaimedDraftCreateRequestFormDataExample:
-      summary: 'With File Example'
-      value:
-        $ref: examples/json/UnclaimedDraftCreateRequestFormDataExample.json
     UnclaimedDraftCreateEmbeddedRequestDefaultExample:
       summary: 'Default Example'
       value:
@@ -8535,18 +10029,10 @@ components:
       summary: 'Form Fields Per Document and Rules Example'
       value:
         $ref: examples/json/UnclaimedDraftCreateEmbeddedRequestFormFieldRulesExample.json
-    UnclaimedDraftCreateEmbeddedRequestFormDataExample:
-      summary: 'With File Example'
-      value:
-        $ref: examples/json/UnclaimedDraftCreateEmbeddedRequestFormDataExample.json
     UnclaimedDraftCreateEmbeddedWithTemplateRequestDefaultExample:
       summary: 'Default Example'
       value:
         $ref: examples/json/UnclaimedDraftCreateEmbeddedWithTemplateRequestDefaultExample.json
-    UnclaimedDraftCreateEmbeddedWithTemplateRequestFormDataExample:
-      summary: 'With File Example'
-      value:
-        $ref: examples/json/UnclaimedDraftCreateEmbeddedWithTemplateRequestFormDataExample.json
     UnclaimedDraftEditAndResendRequestDefaultExample:
       summary: 'Default Example'
       value:
@@ -8655,18 +10141,18 @@ components:
       summary: '_t__EventCallbackAccountTemplateCreatedExample::SUMMARY'
       value:
         $ref: examples/json/EventCallbackAccountTemplateCreatedExample.json
-    EventCallbackApiAppAccountConfirmedExample:
-      summary: '_t__EventCallbackApiAppAccountConfirmedExample::SUMMARY'
+    EventCallbackAppAccountConfirmedExample:
+      summary: '_t__EventCallbackAppAccountConfirmedExample::SUMMARY'
       value:
-        $ref: examples/json/EventCallbackApiAppAccountConfirmedExample.json
-    EventCallbackApiAppSignatureRequestSentExample:
-      summary: '_t__EventCallbackApiAppSignatureRequestSentExample::SUMMARY'
+        $ref: examples/json/EventCallbackAppAccountConfirmedExample.json
+    EventCallbackAppSignatureRequestSentExample:
+      summary: '_t__EventCallbackAppSignatureRequestSentExample::SUMMARY'
       value:
-        $ref: examples/json/EventCallbackApiAppSignatureRequestSentExample.json
-    EventCallbackApiAppTemplateCreatedExample:
-      summary: '_t__EventCallbackApiAppTemplateCreatedExample::SUMMARY'
+        $ref: examples/json/EventCallbackAppSignatureRequestSentExample.json
+    EventCallbackAppTemplateCreatedExample:
+      summary: '_t__EventCallbackAppTemplateCreatedExample::SUMMARY'
       value:
-        $ref: examples/json/EventCallbackApiAppTemplateCreatedExample.json
+        $ref: examples/json/EventCallbackAppTemplateCreatedExample.json
     OAuthTokenGenerateResponseExample:
       summary: '_t__OAuthTokenGenerateResponseExample::SUMMARY'
       value:
@@ -8743,6 +10229,10 @@ components:
       summary: '_t__TeamInfoResponseExample::SUMMARY'
       value:
         $ref: examples/json/TeamGetInfoResponseExample.json
+    TeamInvitesResponseExample:
+      summary: '_t__TeamInvitesResponseExample::SUMMARY'
+      value:
+        $ref: examples/json/TeamInvitesResponseExample.json
     TeamMembersResponseExample:
       summary: '_t__TeamMembersResponseExample::SUMMARY'
       value:
@@ -8811,51 +10301,46 @@ components:
     EventCallbackAccountRequest:
       description: '_t__EventCallbackAccountRequest::DESCRIPTION'
       content:
-        application/json:
+        multipart/form-data:
           schema:
-            $ref: '#/components/schemas/EventCallbackAccountRequest'
+            $ref: '#/components/schemas/EventCallbackRequest'
           examples:
             signature_request_sent_example:
               $ref: '#/components/examples/EventCallbackAccountSignatureRequestSentExample'
             template_created_example:
               $ref: '#/components/examples/EventCallbackAccountTemplateCreatedExample'
-        multipart/form-data:
-          schema:
-            $ref: '#/components/schemas/EventCallbackAccountRequest'
-          examples:
-            signature_request_example:
-              $ref: '#/components/examples/EventCallbackAccountSignatureRequestSentExample'
-            template_created_example:
-              $ref: '#/components/examples/EventCallbackAccountTemplateCreatedExample'
-          encoding:
-            json:
-              contentType: application/json
-    EventCallbackApiAppRequest:
-      description: '_t__EventCallbackApiAppRequest::DESCRIPTION'
+    EventCallbackAppRequest:
+      description: '_t__EventCallbackAppRequest::DESCRIPTION'
       content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/EventCallbackApiAppRequest'
-          examples:
-            account_confirmed_example:
-              $ref: '#/components/examples/EventCallbackApiAppAccountConfirmedExample'
-            signature_request_sent_example:
-              $ref: '#/components/examples/EventCallbackApiAppSignatureRequestSentExample'
-            template_created_example:
-              $ref: '#/components/examples/EventCallbackApiAppTemplateCreatedExample'
         multipart/form-data:
           schema:
-            $ref: '#/components/schemas/EventCallbackApiAppRequest'
+            $ref: '#/components/schemas/EventCallbackRequest'
           examples:
             account_confirmed_example:
-              $ref: '#/components/examples/EventCallbackApiAppAccountConfirmedExample'
+              $ref: '#/components/examples/EventCallbackAppAccountConfirmedExample'
             signature_request_sent_example:
-              $ref: '#/components/examples/EventCallbackApiAppSignatureRequestSentExample'
+              $ref: '#/components/examples/EventCallbackAppSignatureRequestSentExample'
             template_created_example:
-              $ref: '#/components/examples/EventCallbackApiAppTemplateCreatedExample'
-          encoding:
-            json:
-              contentType: application/json
+              $ref: '#/components/examples/EventCallbackAppTemplateCreatedExample'
+  headers:
+    X-RateLimit-Limit:
+      description: '_t__Common::RateLimiting::LIMIT'
+      schema:
+        type: integer
+        format: int32
+      example: 100
+    X-RateLimit-Remaining:
+      description: '_t__Common::RateLimiting::REMAINING'
+      schema:
+        type: integer
+        format: int32
+      example: 99
+    X-Ratelimit-Reset:
+      description: '_t__Common::RateLimiting::RESET'
+      schema:
+        type: integer
+        format: int64
+      example: 1430170900
   securitySchemes:
     api_key:
       type: http
@@ -8920,6 +10405,46 @@ x-webhooks:
       summary: '_t__OpenApi::ACCOUNT_CALLBACK::SUMMARY'
       operationId: accountUpdateEventCallback
       description: '_md__OpenApi::ACCOUNT_CALLBACK::DESCRIPTION'
+      x-meta:
+        seo:
+          title: '_t__accountUpdateEventCallback::SEO::TITLE'
+          description: '_t__accountUpdateEventCallback::SEO::DESCRIPTION'
+      x-codeSamples:
+        -
+          lang: PHP
+          label: PHP
+          source:
+            $ref: examples/EventCallback.php
+        -
+          lang: 'C#'
+          label: 'C#'
+          source:
+            $ref: examples/EventCallback.cs
+        -
+          lang: JavaScript
+          label: JavaScript
+          source:
+            $ref: examples/EventCallback.js
+        -
+          lang: TypeScript
+          label: TypeScript
+          source:
+            $ref: examples/EventCallback.ts
+        -
+          lang: Java
+          label: Java
+          source:
+            $ref: examples/EventCallback.java
+        -
+          lang: Ruby
+          label: Ruby
+          source:
+            $ref: examples/EventCallback.rb
+        -
+          lang: Python
+          label: Python
+          source:
+            $ref: examples/EventCallback.py
       tags:
         - 'Callbacks and Events'
       requestBody:
@@ -8927,15 +10452,55 @@ x-webhooks:
       responses:
         '200':
           $ref: '#/components/responses/EventCallbackResponse'
-  apiAppCallback:
+  appCallback:
     post:
       summary: '_t__OpenApi::APP_CALLBACK::SUMMARY'
       description: '_md__OpenApi::APP_CALLBACK::DESCRIPTION'
       operationId: apiAppCreateEventCallback
+      x-meta:
+        seo:
+          title: '_t__appCreateEventCallback::SEO::TITLE'
+          description: '_t__appCreateEventCallback::SEO::DESCRIPTION'
+      x-codeSamples:
+        -
+          lang: PHP
+          label: PHP
+          source:
+            $ref: examples/EventCallback.php
+        -
+          lang: 'C#'
+          label: 'C#'
+          source:
+            $ref: examples/EventCallback.cs
+        -
+          lang: JavaScript
+          label: JavaScript
+          source:
+            $ref: examples/EventCallback.js
+        -
+          lang: TypeScript
+          label: TypeScript
+          source:
+            $ref: examples/EventCallback.ts
+        -
+          lang: Java
+          label: Java
+          source:
+            $ref: examples/EventCallback.java
+        -
+          lang: Ruby
+          label: Ruby
+          source:
+            $ref: examples/EventCallback.rb
+        -
+          lang: Python
+          label: Python
+          source:
+            $ref: examples/EventCallback.py
       tags:
         - 'Callbacks and Events'
       requestBody:
-        $ref: '#/components/requestBodies/EventCallbackApiAppRequest'
+        $ref: '#/components/requestBodies/EventCallbackAppRequest'
       responses:
         '200':
           $ref: '#/components/responses/EventCallbackResponse'

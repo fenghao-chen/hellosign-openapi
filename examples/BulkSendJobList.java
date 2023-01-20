@@ -1,10 +1,10 @@
-import org.hellosign.openapi.ApiClient;
-import org.hellosign.openapi.ApiException;
-import org.hellosign.openapi.Configuration;
-import org.hellosign.openapi.api.*;
-import org.hellosign.openapi.auth.HttpBasicAuth;
-import org.hellosign.openapi.auth.HttpBearerAuth;
-import org.hellosign.openapi.model.*;
+import com.hellosign.openapi.ApiClient;
+import com.hellosign.openapi.ApiException;
+import com.hellosign.openapi.Configuration;
+import com.hellosign.openapi.api.*;
+import com.hellosign.openapi.auth.HttpBasicAuth;
+import com.hellosign.openapi.auth.HttpBearerAuth;
+import com.hellosign.openapi.model.*;
 
 public class Example {
     public static void main(String[] args) {
@@ -16,12 +16,12 @@ public class Example {
         api_key.setUsername("YOUR_API_KEY");
 
         // or, configure Bearer (JWT) authorization: oauth2
-		/*
-		HttpBearerAuth oauth2 = (HttpBearerAuth) defaultClient
+        /*
+        HttpBearerAuth oauth2 = (HttpBearerAuth) defaultClient
             .getAuthentication("oauth2");
 
         oauth2.setBearerToken("YOUR_ACCESS_TOKEN");
-		*/
+        */
 
         BulkSendJobApi api = new BulkSendJobApi(defaultClient);
 

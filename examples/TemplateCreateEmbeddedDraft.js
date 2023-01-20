@@ -1,5 +1,6 @@
-import * as HelloSignSDK
-  from "@hellosign/openapi-javascript-sdk";
+import * as HelloSignSDK from "hellosign-sdk";
+
+const fs = require('fs');
 
 const api = new HelloSignSDK.TemplateApi();
 
@@ -7,7 +8,7 @@ const api = new HelloSignSDK.TemplateApi();
 api.username = "YOUR_API_KEY";
 
 // or, configure Bearer (JWT) authorization: oauth2
-// $config->setAccessToken("YOUR_ACCESS_TOKEN");
+// api.accessToken = "YOUR_ACCESS_TOKEN";
 
 const role1 = {
   name: "Client",
@@ -35,7 +36,7 @@ const fieldOptions = {
 
 const data = {
   clientId: "37dee8d8440c66d54cfa05d92c160882",
-  fileUrl: ["https://app.hellosign.com/docs/example_signature_request.pdf"],
+  file: [fs.createReadStream("example_signature_request.pdf")],
   title: "Test Template",
   subject: "Please sign this document",
   message: "For your approval",
